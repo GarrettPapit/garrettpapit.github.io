@@ -27,59 +27,102 @@
                 <iframe class="absolute top-0 left-0 w-full h-full" src="https://youtube.com" title="Project Walkthrough" frameborder="0" allowfullscreen></iframe>
             </div>
 			
-			<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>GarretTech Solutions | Portfolio</title>
-    <!-- Tailwind CSS Play CDN -->
-    <script src="https://tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed">
-
-    <!-- Hero Header -->
-    <header class="max-w-4xl mx-auto pt-16 pb-8 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-400">Garrett Papit</h1>
-        <p class="text-xl text-gray-400 mt-2 font-light">Enterprise .NET Architect & Full-Stack Engineer</p>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        
-        <!-- 1. Featured Video Walkthrough Section -->
-        <section class="bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-lg mb-12">
-            <h2 class="text-2xl font-bold mb-4 text-blue-300">Featured Architecture: Enterprise Activity Monitoring System</h2>
-            <!-- Video Container -->
-            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-black mb-6">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <!-- Bullet points / Specs go here -->
-        </section>
-
-        <!-- 2. PASTE THE NEW POLISHED PROJECT CARDS GRID HERE -->
-        <section class="max-w-7xl mx-auto px-4 py-12">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Flagship Project Card -->
-            <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
-              <!-- (Card content...) -->
-            </div>
-
-            <!-- Upwork / Service Cards 2, 3, and 4 go here... -->
-
-          </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="max-w-4xl mx-auto py-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Garrett Papit. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+		<section class="max-w-7xl mx-auto px-4 py-12">
+		  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 			
+			<!-- Flagship Architecture Project -->
+			<div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
+			  <!-- Top Accent Gradient Line on Hover -->
+			  <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+			  
+			  <div>
+				<span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-400 mb-4 self-start">Flagship Architecture</span>
+				<h3 class="text-xl font-bold mb-3 text-slate-100">Enterprise Activity Monitoring System</h3>
+				<p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+				  Real-time monitoring platform utilizing .NET 8 microservices, CQRS with MediatR, and SQL Server paired with Dapper for sub-50ms paginated query delivery[cite: 1].
+				</p>
+				<div class="flex flex-wrap gap-2 mb-6">
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">.NET 8</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">SignalR</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Dapper</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">React/Angular</span>
+				</div>
+			  </div>
+			  
+			  <div class="flex gap-4 items-center pt-4 border-t border-slate-700/60">
+				<a href="https://github.com/" target="_blank" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors hover:bg-sky-300">View Source</a>
+				<a href="mailto:your.email@example.com" class="text-slate-100 bg-transparent border border-slate-700 font-medium px-4 py-2 rounded-lg text-sm transition-all hover:border-slate-100 hover:bg-white/5">Discovery Call</a>
+			  </div>
+			</div>
+
+			<!-- Upwork Project 2: Private Local AI & Whisper -->
+			<div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
+			  <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+			  
+			  <div>
+				<span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4 self-start">AI Automation ($450)</span>
+				<h3 class="text-xl font-bold mb-3 text-slate-100">Private Local AI & Whisper Deployment</h3>
+				<p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+				  100% offline, zero-latency voice transcription pipeline featuring faster-whisper folder watching and local text output with absolute data privacy.
+				</p>
+				<div class="flex flex-wrap gap-2 mb-6">
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Whisper</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Ollama</span>
+				</div>
+			  </div>
+			  
+			  <div class="flex gap-4 items-center pt-4 border-t border-slate-700/60">
+				<a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors hover:bg-sky-300">View Demo</a>
+			  </div>
+			</div>
+
+			<!-- Upwork Project 3: C# .NET Core Debug & Optimization -->
+			<div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
+			  <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+			  
+			  <div>
+				<span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4 self-start">Backend Optimization ($350)</span>
+				<h3 class="text-xl font-bold mb-3 text-slate-100">C# .NET Core App Debug & Performance</h3>
+				<p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+				  Surgical diagnostic and repair service resolving EF Core runtime exceptions, database bottlenecks, memory leaks, and high-load latency crashes.
+				</p>
+				<div class="flex flex-wrap gap-2 mb-6">
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">C# .NET</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">EF Core</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">SQL Profiling</span>
+				</div>
+			  </div>
+			  
+			  <div class="flex gap-4 items-center pt-4 border-t border-slate-700/60">
+				<a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors hover:bg-sky-300">View Details</a>
+			  </div>
+			</div>
+
+			<!-- Upwork Project 4: AI Image & Document Pipeline -->
+			<div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
+			  <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+			  
+			  <div>
+				<span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4 self-start">Data Pipeline ($200)</span>
+				<h3 class="text-xl font-bold mb-3 text-slate-100">Private Local AI Document & Image Pipeline</h3>
+				<p class="text-sm text-slate-400 leading-relaxed mb-6 flex-grow">
+				  Automated multi-drive file ingestion engine featuring dual SHA-256 binary deduplication, perceptual hashing (pHash), and multi-modal content extraction.
+				</p>
+				<div class="flex flex-wrap gap-2 mb-6">
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">OCR</span>
+				  <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">pHash</span>
+				</div>
+			  </div>
+			  
+			  <div class="flex gap-4 items-center pt-4 border-t border-slate-700/60">
+				<a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors hover:bg-sky-300">View Details</a>
+			  </div>
+			</div>
+
+		  </div>
+		</section>
 
             <!-- Fast Copy Points -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
