@@ -4,146 +4,327 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarrettTech Solutions | Portfolio</title>
-    <!-- Tailwind CSS Play CDN (Compiles  in browser with zero build tools) -->
-    <script src="https://tailwindcss.com"></script>
+    <style>
+        /* High-Performance Custom Dark Theme & Glassmorphism */
+        :root {
+            --bg-deep: #030712;
+            --bg-card: #111827;
+            --border-color: #1f2937;
+            --accent-blue: #38bdf8;
+            --accent-emerald: #34d399;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 0.5rem 0;
+        }
+
+        header h1 span {
+            color: var(--accent-blue);
+        }
+
+        header p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin: 0.25rem 0;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background: rgba(52, 211, 153, 0.1);
+            color: var(--accent-emerald);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000000;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .grid-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .point-box {
+            background: rgba(3, 7, 18, 0.6);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .point-box h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #e5e7eb;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .point-box p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: #030712;
+            font-weight: 600;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            font-weight: 500;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.875rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+    </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans leading-relaxed min-h-screen">
+<body>
 
     <!-- Hero Header -->
-    <header class="max-w-4xl mx-auto pt-20 pb-10 px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
-            Garrett <span class="text-sky-400">Papit</span>
-        </h1>
-        <p class="text-xl text-gray-400 mt-3 font-light tracking-wide">
-            Enterprise <span class="text-sky-400 font-medium">.NET Architect</span> & Full-Stack Systems Engineer
-        </p>
-        <p class="text-sm text-gray-500 mt-1">Backed by a B.S. in CIS & an MBA</p>
+    <header>
+        <h1>Garrett <span>Papit</span></h1>
+        <p>Enterprise <strong>.NET Architect</strong> & Full-Stack Systems Engineer</p>
+        <p style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem;">Backed by a B.S. in CIS & an MBA</p>
     </header>
 
     <!-- Main Content Area -->
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="container">
         
         <!-- 1. Featured Video Walkthrough Section -->
-        <section class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl mb-20">
-            <div class="flex items-center justify-between mb-4">
-                <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    Flagship Architecture
-                </span>
-                <span class="text-xs text-emerald-400 font-mono">● Live Demo Ready</span>
+        <section class="card" style="max-width: 900px; margin: 0 auto 3rem auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="badge">Flagship Architecture</span>
+                <span style="font-size: 0.75rem; color: var(--accent-emerald); font-family: monospace;">● Live Demo Ready</span>
             </div>
 
-            <h2 class="text-2xl font-bold mb-4 text-gray-100">Featured Architecture Project: Enterprise Activity Monitoring System</h2>
+            <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">Featured Architecture Project: Enterprise Activity Monitoring System</h2>
             
             <!-- Video Container -->
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 mb-6 bg-black">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Walkthrough" frameborder="0" allowfullscreen></iframe>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Walkthrough" allowfullscreen></iframe>
             </div>
 
             <!-- Fast Copy Points -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-8">
-                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
-                    <h3 class="font-bold text-gray-200 mb-1">🚀 Backend Architecture</h3>
-                    <p class="text-gray-400 text-xs">.NET 8 Microservices, CQRS with MediatR, and strict SOLID principles.</p>
+            <div class="grid-points">
+                <div class="point-box">
+                    <h3>🚀 Backend Architecture</h3>
+                    <p>.NET 8 Microservices, CQRS with MediatR, and strict SOLID principles.</p>
                 </div>
-                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
-                    <h3 class="font-bold text-gray-200 mb-1">⚡ Database Optimization</h3>
-                    <p class="text-gray-400 text-xs">SQL Server paired with Dapper Micro-ORM for sub-50ms paginated query delivery.</p>
+                <div class="point-box">
+                    <h3>⚡ Database Optimization</h3>
+                    <p>SQL Server paired with Dapper Micro-ORM for sub-50ms paginated query delivery.</p>
                 </div>
-                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
-                    <h3 class="font-bold text-gray-200 mb-1">📡 Real-Time UI</h3>
-                    <p class="text-gray-400 text-xs">React & Angular components hooked directly into a live SignalR WebSocket pipeline.</p>
+                <div class="point-box">
+                    <h3>📡 Real-Time UI</h3>
+                    <p>React & Angular components hooked directly into a live SignalR WebSocket pipeline.</p>
                 </div>
-                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
-                    <h3 class="font-bold text-gray-200 mb-1">🐋 DevOps Ready</h3>
-                    <p class="text-gray-400 text-xs">Fully containerized development ecosystem using multi-stage Docker Compose scripting.</p>
+                <div class="point-box">
+                    <h3>🐋 DevOps Ready</h3>
+                    <p>Fully containerized development ecosystem using multi-stage Docker Compose scripting.</p>
                 </div>
             </div>
 
-            <div class="pt-6 border-t border-gray-800 flex flex-wrap gap-4 justify-between items-center">
-                <a href="https://github.com" target="_blank" class="bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2.5 px-5 rounded-xl text-sm transition-all shadow-lg">View Source on GitHub</a>
-                <a href="mailto:your.email@example.com" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-medium py-2.5 px-6 rounded-xl border border-gray-700 transition-all">Book a Discovery Call</a>
+            <div class="btn-group">
+                <a href="https://github.com" target="_blank" class="btn-primary">View Source on GitHub</a>
+                <a href="mailto:your.email@example.com" class="btn-secondary">Book a Discovery Call</a>
             </div>
         </section>
 
         <!-- 2. Polished Project Cards Grid Section -->
-        <section class="mb-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-100 tracking-tight">Client Projects & Architecture Suite</h2>
-                <p class="text-gray-400 mt-2 text-sm">Explore production-ready systems, custom Upwork deliveries, and microservice demos.</p>
+        <section>
+            <div style="text-align: center; margin-bottom: 2.5rem;">
+                <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;">Client Projects & Architecture Suite</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Explore production-ready systems, custom Upwork deliveries, and microservice demos.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="projects-grid">
                 
                 <!-- Flagship Project Card -->
-                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
+                <div class="project-card">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 mb-4">Flagship Architecture</span>
-                        <h3 class="text-xl font-bold mb-3 text-gray-100">Enterprise Activity Monitoring System</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        <span class="badge" style="background: rgba(52, 211, 153, 0.1);">Flagship Architecture</span>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">Enterprise Activity Monitoring System</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
                             Real-time monitoring platform utilizing .NET 8 microservices, CQRS with MediatR, and SQL Server paired with Dapper for sub-50ms paginated query delivery[cite: 1].
                         </p>
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">.NET 8</span>
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">SignalR</span>
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Dapper</span>
-                        </div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <a href="https://github.com" target="_blank" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Source</a>
+                    <div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">.NET 8</span>
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">SignalR</span>
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">Dapper</span>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="btn-primary" style="display: block; text-align: center;">View Source</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 2 -->
-                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
+                <div class="project-card">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">AI Automation ($450)</span>
-                        <h3 class="text-xl font-bold mb-3 text-gray-100">Private Local AI & Whisper</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.2);">AI Automation ($450)</span>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">Private Local AI & Whisper</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
                             100% offline, zero-latency voice transcription pipeline featuring faster-whisper folder watching and local text output.
                         </p>
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Python</span>
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Whisper</span>
-                        </div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Demo</a>
+                    <div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">Python</span>
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">Whisper</span>
+                        </div>
+                        <a href="#" class="btn-primary" style="display: block; text-align: center;">View Demo</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 3 -->
-                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
+                <div class="project-card">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">Backend Optimization ($350)</span>
-                        <h3 class="text-xl font-bold mb-3 text-gray-100">C# .NET Core App Debug</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.2);">Backend Optimization ($350)</span>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">C# .NET Core App Debug</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
                             Surgical diagnostic and repair service resolving EF Core runtime exceptions, database bottlenecks, and memory leaks.
                         </p>
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">C# .NET</span>
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">EF Core</span>
-                        </div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Details</a>
+                    <div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">C# .NET</span>
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">EF Core</span>
+                        </div>
+                        <a href="#" class="btn-primary" style="display: block; text-align: center;">View Details</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 4 -->
-                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
+                <div class="project-card">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">Data Pipeline ($200)</span>
-                        <h3 class="text-xl font-bold mb-3 text-gray-100">AI Document & Image Pipeline</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                        <span class="badge" style="background: rgba(56, 189, 248, 0.1); color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.2);">Data Pipeline ($200)</span>
+                        <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">AI Document & Image Pipeline</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
                             Automated multi-drive file ingestion engine featuring dual SHA-256 binary deduplication and perceptual hashing.
                         </p>
-                        <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Python</span>
-                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">OCR</span>
-                        </div>
                     </div>
-                    <div class="pt-4 border-t border-gray-800">
-                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Details</a>
+                    <div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">Python</span>
+                            <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">OCR</span>
+                        </div>
+                        <a href="#" class="btn-primary" style="display: block; text-align: center;">View Details</a>
                     </div>
                 </div>
 
@@ -153,8 +334,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-4xl mx-auto py-8 text-center text-gray-500 text-xs border-t border-gray-900">
-        <p>&copy; 2026 Garrett Papit. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2026 Garrett Papit. All rights reserved. Built with precision architecture.</p>
     </footer>
 
 </body>
