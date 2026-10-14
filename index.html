@@ -1,148 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-slate-950">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarrettTech Solutions | Portfolio</title>
-    <!-- Tailwind CSS Play CDN -->
+    <!-- Tailwind CSS Play CDN (Compiles instantly in browser with zero build tools) -->
     <script src="https://tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans leading-relaxed min-h-screen">
-
-	<!-- Ambient background glow gradients -->
-	<div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-		<div class="absolute -top-40 -left-40 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl animate-pulse"></div>
-		<div class="absolute top-1/3 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style="animation-duration: 4s;"></div>
-	</div>
+<body class="bg-gray-950 text-gray-100 font-sans leading-relaxed min-h-screen">
 
     <!-- Hero Header -->
-    <header class="max-w-4xl mx-auto pt-16 pb-8 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-blue-400">Garrett Papit</h1>
-        <p class="text-xl text-gray-400 mt-2 font-light">Enterprise .NET Architect & Full-Stack Engineer</p>
-        <p class="text-md text-gray-500 mt-1">Backed by a B.S. in CIS & an MBA</p>
+    <header class="max-w-4xl mx-auto pt-20 pb-10 px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+            Garrett <span class="text-sky-400">Papit</span>
+        </h1>
+        <p class="text-xl text-gray-400 mt-3 font-light tracking-wide">
+            Enterprise <span class="text-sky-400 font-medium">.NET Architect</span> & Full-Stack Systems Engineer
+        </p>
+        <p class="text-sm text-gray-500 mt-1">Backed by a B.S. in CIS & an MBA</p>
     </header>
 
     <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-4 py-8">
         
         <!-- 1. Featured Video Walkthrough Section -->
-        <section class="max-w-4xl mx-auto bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-2xl mb-16">
-            <h2 class="text-2xl font-bold mb-4 text-blue-300">Featured Architecture Project: Enterprise Activity Monitoring System</h2>
+        <section class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-2xl border border-gray-800 shadow-2xl mb-20">
+            <div class="flex items-center justify-between mb-4">
+                <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Flagship Architecture
+                </span>
+                <span class="text-xs text-emerald-400 font-mono">● Live Demo Ready</span>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-4 text-gray-100">Featured Architecture Project: Enterprise Activity Monitoring System</h2>
             
             <!-- Video Container -->
-            <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-gray-700 mb-6 bg-black">
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-800 mb-6 bg-black">
                 <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Walkthrough" frameborder="0" allowfullscreen></iframe>
             </div>
 
             <!-- Fast Copy Points -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm mb-6">
-                <div>
-                    <h3 class="font-bold text-gray-300">🚀 Backend Architecture</h3>
-                    <p class="text-gray-400">.NET 8 Microservices, CQRS with MediatR, and strict SOLID principles.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-8">
+                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-gray-200 mb-1">🚀 Backend Architecture</h3>
+                    <p class="text-gray-400 text-xs">.NET 8 Microservices, CQRS with MediatR, and strict SOLID principles.</p>
                 </div>
-                <div>
-                    <h3 class="font-bold text-gray-300">⚡ Database Optimization</h3>
-                    <p class="text-gray-400">SQL Server paired with Dapper Micro-ORM for sub-50ms paginated query delivery.</p>
+                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-gray-200 mb-1">⚡ Database Optimization</h3>
+                    <p class="text-gray-400 text-xs">SQL Server paired with Dapper Micro-ORM for sub-50ms paginated query delivery.</p>
                 </div>
-                <div>
-                    <h3 class="font-bold text-gray-300">📡 Real-Time UI</h3>
-                    <p class="text-gray-400">React & Angular components hooked directly into a live SignalR WebSocket pipeline.</p>
+                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-gray-200 mb-1">📡 Real-Time UI</h3>
+                    <p class="text-gray-400 text-xs">React & Angular components hooked directly into a live SignalR WebSocket pipeline.</p>
                 </div>
-                <div>
-                    <h3 class="font-bold text-gray-300">🐋 DevOps Ready</h3>
-                    <p class="text-gray-400">Fully containerized development ecosystem using multi-stage Docker Compose scripting.</p>
+                <div class="bg-gray-950/60 p-4 rounded-xl border border-gray-800">
+                    <h3 class="font-bold text-gray-200 mb-1">🐋 DevOps Ready</h3>
+                    <p class="text-gray-400 text-xs">Fully containerized development ecosystem using multi-stage Docker Compose scripting.</p>
                 </div>
             </div>
 
-            <div class="pt-4 border-t border-gray-700 flex flex-wrap gap-4 justify-between items-center">
-                <a href="https://github.com" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded transition">View Source on GitHub</a>
-                <a href="mailto:your.email@example.com" class="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded transition">Book a Discovery Call</a>
+            <div class="pt-6 border-t border-gray-800 flex flex-wrap gap-4 justify-between items-center">
+                <a href="https://github.com" target="_blank" class="bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2.5 px-5 rounded-xl text-sm transition-all shadow-lg">View Source on GitHub</a>
+                <a href="mailto:your.email@example.com" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-medium py-2.5 px-6 rounded-xl border border-gray-700 transition-all">Book a Discovery Call</a>
             </div>
         </section>
 
         <!-- 2. Polished Project Cards Grid Section -->
-        <section class="mb-16">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-100">Client Projects & Architecture Suite</h2>
-                <p class="text-slate-400 mt-2">Explore production-ready systems, custom Upwork deliveries, and microservice demos.</p>
+        <section class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-100 tracking-tight">Client Projects & Architecture Suite</h2>
+                <p class="text-gray-400 mt-2 text-sm">Explore production-ready systems, custom Upwork deliveries, and microservice demos.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Flagship Project Card -->
-                <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-400 mb-4">Flagship Architecture</span>
-                        <h3 class="text-xl font-bold mb-3 text-slate-100">Enterprise Activity Monitoring System</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 mb-4">Flagship Architecture</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-100">Enterprise Activity Monitoring System</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
                             Real-time monitoring platform utilizing .NET 8 microservices, CQRS with MediatR, and SQL Server paired with Dapper for sub-50ms paginated query delivery[cite: 1].
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">.NET 8</span>
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">SignalR</span>
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Dapper</span>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">.NET 8</span>
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">SignalR</span>
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Dapper</span>
                         </div>
                     </div>
-                    <div class="flex gap-3 items-center pt-4 border-t border-slate-700/60">
-                        <a href="https://github.com" target="_blank" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-xs transition-colors hover:bg-sky-300">View Source</a>
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="https://github.com" target="_blank" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Source</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 2 -->
-                <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4">AI Automation ($450)</span>
-                        <h3 class="text-xl font-bold mb-3 text-slate-100">Private Local AI & Whisper</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">AI Automation ($450)</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-100">Private Local AI & Whisper</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
                             100% offline, zero-latency voice transcription pipeline featuring faster-whisper folder watching and local text output.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Whisper</span>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Python</span>
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Whisper</span>
                         </div>
                     </div>
-                    <div class="flex gap-3 items-center pt-4 border-t border-slate-700/60">
-                        <a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-xs transition-colors hover:bg-sky-300">View Demo</a>
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Demo</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 3 -->
-                <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4">Backend Optimization ($350)</span>
-                        <h3 class="text-xl font-bold mb-3 text-slate-100">C# .NET Core App Debug</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">Backend Optimization ($350)</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-100">C# .NET Core App Debug</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
                             Surgical diagnostic and repair service resolving EF Core runtime exceptions, database bottlenecks, and memory leaks.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">C# .NET</span>
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">EF Core</span>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">C# .NET</span>
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">EF Core</span>
                         </div>
                     </div>
-                    <div class="flex gap-3 items-center pt-4 border-t border-slate-700/60">
-                        <a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-xs transition-colors hover:bg-sky-300">View Details</a>
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Details</a>
                     </div>
                 </div>
 
                 <!-- Upwork Project 4 -->
-                <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-xl hover:shadow-sky-500/10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-sky-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-sky-500/50 hover:shadow-2xl">
                     <div>
-                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-400/10 text-sky-400 mb-4">Data Pipeline ($200)</span>
-                        <h3 class="text-xl font-bold mb-3 text-slate-100">AI Document & Image Pipeline</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        <span class="inline-block text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 mb-4">Data Pipeline ($200)</span>
+                        <h3 class="text-xl font-bold mb-3 text-gray-100">AI Document & Image Pipeline</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
                             Automated multi-drive file ingestion engine featuring dual SHA-256 binary deduplication and perceptual hashing.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">Python</span>
-                            <span class="text-xs bg-slate-900/60 border border-slate-700 px-2 py-1 rounded text-slate-400">OCR</span>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">Python</span>
+                            <span class="text-[10px] font-mono bg-gray-950 border border-gray-800 px-2 py-0.5 rounded text-gray-400">OCR</span>
                         </div>
                     </div>
-                    <div class="flex gap-3 items-center pt-4 border-t border-slate-700/60">
-                        <a href="#" class="bg-sky-400 text-slate-900 font-semibold px-4 py-2 rounded-lg text-xs transition-colors hover:bg-sky-300">View Details</a>
+                    <div class="pt-4 border-t border-gray-800">
+                        <a href="#" class="block text-center bg-sky-400 hover:bg-sky-300 text-gray-950 font-semibold py-2 rounded-lg text-xs transition-colors">View Details</a>
                     </div>
                 </div>
 
@@ -152,9 +153,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-4xl mx-auto py-8 text-center text-gray-500 text-sm border-t border-gray-800">
+    <footer class="max-w-4xl mx-auto py-8 text-center text-gray-500 text-xs border-t border-gray-900">
         <p>&copy; 2026 Garrett Papit. All rights reserved.</p>
-	</footer>
+    </footer>
 
 </body>
 </html>
