@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarretTech Solutions | Local IT Services & Computer Repair</title>
+    <style>
+        :root {
+            --bg-deep: #030712;
+            --bg-card: #0b1329;
+            --border-color: #1e293b;
+            --accent-blue: #38bdf8;
+            --accent-green: #22c55e;
+            --accent-purple: #c084fc;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(3, 7, 18, 1) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-banner {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 10px 15px rgba(56, 189, 248, 0.15));
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            color: #ffffff;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        /* Platform Reviews & Badges */
+        .platform-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .platform-btn {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .platform-btn:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .service-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .review-card {
+            background: rgba(3, 7, 18, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* CTA & Contact */
+        .cta-box {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2.5rem 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .btn-call {
+            background-color: var(--accent-green);
+            color: #030712;
+            font-weight: 700;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Cross-Link Utility Bar -->
+    <div style="background: #0b1329; border-bottom: 1px solid #1e293b; padding: 0.5rem; text-align: center; font-size: 0.8rem; color: #94a3b8;">
+        Looking for Enterprise .NET Architecture & Microservice Consulting? 
+        <a href="../index.html" style="color: #38bdf8; text-decoration: none; font-weight: 600; margin-left: 0.25rem;">View Principal Portfolio →</a>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="hero">
+        <div class="container">
+            <!-- Insert your preferred logo image here -->
+            <img src="../assets/GarretTech Solutions Banner.jpg" alt="GarretTech Solutions Logo" class="logo-banner">
+            
+            <h1>Reliable IT Services, Computer Repair & Tech Solutions</h1>
+            <p>Fast, professional technical support for homes, local businesses, and remote professionals. From data recovery to network security.</p>
+
+            <!-- External Business Links -->
+            <div class="platform-bar">
+                <a href="https://share.google/3Gu3vuVIZNDe0myls" target="_blank" class="platform-btn">⭐ Google Reviews</a>
+                <a href="https://www.yelp.com/biz/garrettech-solutions-dallas-2" target="_blank" class="platform-btn">🔴 Yelp Page</a>
+                <a href="https://nextdoor.com/page/garpa-it-solutions-dallas-tx" target="_blank" class="platform-btn">🟢 NextDoor Favorite</a>
+                <a href="https://www.facebook.com/profile.php?id=61589530513649" target="_blank" class="platform-btn">🔵 Facebook Business</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <!-- Services Suite -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Computer Repair & Diagnostic</h3>
+                <p>Hardware troubleshooting, boot failures, screen/component replacement, and performance optimization for PCs and Macs.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💾</div>
+                <h3>Data Recovery & Backup</h3>
+                <p>Safe recovery from damaged or corrupted storage drives, plus automated local and cloud backup configurations.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔑</div>
+                <h3>Password & Access Recovery</h3>
+                <p>Secure system unlock, credential recovery, multifactor authentication setup, and account protection.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Virus & Malware Removal</h3>
+                <p>Deep system cleaning, spyware removal, rootkit remediation, and active antivirus firewall installation.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Network & Wi-Fi Setup</h3>
+                <p>Small business and home network installation, mesh Wi-Fi optimization, router security, and NAS setup.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Managed IT Support</h3>
+                <p>Ongoing technical support packages, remote desktop monitoring, patch management, and software installation.</p>
+            </div>
+        </div>
+
+        <!-- Verified Reviews & Social Proof -->
+        <section class="reviews-section">
+            <h2 style="font-size: 1.5rem; color: #ffffff; margin: 0; text-align: center;">Verified Customer Reviews</h2>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">See what clients say across Google, Yelp, and NextDoor</p>
+
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p style="font-size: 0.85rem; color: #e2e8f0; font-style: italic;">"Garrett fixed my dead desktop drive and recovered all my business records in less than 24 hours. Highly recommended!"</p>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 0.5rem;">— Verified Google Reviewer</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p style="font-size: 0.85rem; color: #e2e8f0; font-style: italic;">"Prompt, professional, and explained the repairs clearly without confusing jargon. My go-to IT specialist."</p>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 0.5rem;">— NextDoor Neighbor</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact CTA -->
+        <div class="cta-box">
+            <h2 style="font-size: 1.75rem; color: #ffffff; margin: 0 0 0.5rem 0;">Need Immediate Tech Support?</h2>
+            <p style="color: var(--text-muted); margin: 0;">Get in touch for a fast diagnostic and direct quote.</p>
+            <a href="mailto:your.business.email@example.com" class="btn-call">Book an IT Service Call</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GarretTech Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
