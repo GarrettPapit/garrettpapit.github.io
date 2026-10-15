@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GarrettTech Solutions | Portfolio</title>
     <style>
-        /* High-Performance Custom Dark Theme & Glassmorphism */
         :root {
             --bg-deep: #030712;
             --bg-card: #111827;
             --border-color: #1f2937;
             --accent-blue: #38bdf8;
+            --accent-cyan: #06b6d4;
             --accent-emerald: #34d399;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
@@ -19,17 +19,51 @@
         body {
             background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Circuit Background Overlay */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.18;
+        }
+
+        /* Glowing Circuit Node Pulse Animation */
+        .node-pulse {
+            animation: pulse-glow 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                r: 4;
+                fill: var(--accent-cyan);
+                filter: drop-shadow(0 0 2px var(--accent-cyan));
+            }
+            100% {
+                r: 6;
+                fill: var(--accent-blue);
+                filter: drop-shadow(0 0 8px var(--accent-blue));
+            }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
         }
 
         header {
@@ -37,6 +71,8 @@
             padding: 3rem 1rem 2rem 1rem;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 10;
         }
 
         header h1 {
@@ -63,6 +99,8 @@
             padding: 2rem;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 10;
         }
 
         .badge {
@@ -82,7 +120,7 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             background: #000000;
             border-radius: 0.75rem;
             overflow: hidden;
@@ -191,10 +229,53 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
             margin-top: 4rem;
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
+
+    <!-- Minimalistic Circuit Traces Ambient SVG Background -->
+    <svg class="circuit-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+                <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1" />
+            </linearGradient>
+        </defs>
+
+        <!-- Left Circuit Array -->
+        <g stroke="url(#circuit-grad)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M -50,150 L 120,150 L 180,210 L 320,210" />
+            <path d="M -50,220 L 80,220 L 140,280 L 250,280 L 290,320 L 400,320" />
+            <path d="M 120,50 L 120,110 L 170,160 L 170,260" />
+            <path d="M -50,450 L 150,450 L 210,390 L 350,390" />
+            <path d="M 80,600 L 180,600 L 240,540 L 380,540 L 420,580" />
+        </g>
+
+        <!-- Right Circuit Array -->
+        <g stroke="url(#circuit-grad)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 1450,180 L 1280,180 L 1220,240 L 1050,240" />
+            <path d="M 1450,290 L 1320,290 L 1260,350 L 1100,350 L 1060,310 L 950,310" />
+            <path d="M 1450,520 L 1250,520 L 1190,460 L 1020,460" />
+            <path d="M 1300,700 L 1200,700 L 1140,640 L 980,640" />
+        </g>
+
+        <!-- Circuit Node Terminal Circles (Pads) -->
+        <g fill="#06b6d4">
+            <circle cx="320" cy="210" r="4" class="node-pulse" />
+            <circle cx="400" cy="320" r="4" class="node-pulse" style="animation-delay: 0.8s;" />
+            <circle cx="350" cy="390" r="4" class="node-pulse" style="animation-delay: 1.5s;" />
+            <circle cx="420" cy="580" r="4" class="node-pulse" style="animation-delay: 0.4s;" />
+            
+            <circle cx="1050" cy="240" r="4" class="node-pulse" style="animation-delay: 1.1s;" />
+            <circle cx="950" cy="310" r="4" class="node-pulse" style="animation-delay: 0.2s;" />
+            <circle cx="1020" cy="460" r="4" class="node-pulse" style="animation-delay: 1.8s;" />
+            <circle cx="980" cy="640" r="4" class="node-pulse" style="animation-delay: 0.6s;" />
+        </g>
+    </svg>
 
     <!-- Hero Header -->
     <header>
@@ -215,12 +296,10 @@
 
             <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #ffffff;">Featured Architecture Project: Enterprise Activity Monitoring System</h2>
             
-            <!-- Video Container -->
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Walkthrough" allowfullscreen></iframe>
             </div>
 
-            <!-- Fast Copy Points -->
             <div class="grid-points">
                 <div class="point-box">
                     <h3>🚀 Backend Architecture</h3>
@@ -241,16 +320,16 @@
             </div>
 
             <div class="btn-group">
-                <a href="https://github.com/GarrettPapit/portfolio-site" target="_blank" class="btn-primary">View Source on GitHub</a>
-                <a href="mailto:garrettechsolutions@gmail.com" class="btn-secondary">Book a Discovery Call</a>
+                <a href="https://github.com" target="_blank" class="btn-primary">View Source on GitHub</a>
+                <a href="mailto:your.email@example.com" class="btn-secondary">Book a Discovery Call</a>
             </div>
         </section>
 
         <!-- 2. Polished Project Cards Grid Section -->
-        <section>
+        <section style="margin-bottom: 4rem;">
             <div style="text-align: center; margin-bottom: 2.5rem;">
                 <h2 style="font-size: 2rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;">Client Projects & Architecture Suite</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Explore production-ready systems, custom Upwork deliveries, and microservice demos.</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Explore production-ready systems, custom deliveries, and microservice demos.</p>
             </div>
 
             <div class="projects-grid">
@@ -270,7 +349,7 @@
                             <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">SignalR</span>
                             <span style="font-size: 0.7rem; font-family: monospace; background: #030712; padding: 0.2rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); color: var(--text-muted);">Dapper</span>
                         </div>
-                        <a href="https://github.com/GarrettPapit/portfolio-site" target="_blank" class="btn-primary" style="display: block; text-align: center;">View Source</a>
+                        <a href="https://github.com" target="_blank" class="btn-primary" style="display: block; text-align: center;">View Source</a>
                     </div>
                 </div>
 
@@ -331,13 +410,43 @@
             </div>
         </section>
 
+        <!-- 3. About & Professional Reference Section -->
+        <section class="card" style="max-width: 900px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; align-items: center;">
+                <div style="text-align: center;">
+                    <div style="width: 130px; height: 130px; margin: 0 auto; border-radius: 50%; background: #1f2937; border: 2px solid var(--accent-blue); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.75rem;">
+                        [Your Photo]
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem;">Architecting High-Performance Systems</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6;">
+                        Hi, I'm Garrett. I bridge deep technical engineering (.NET, Microservices, Python AI pipelines) with strategic business execution, backed by a B.S. in CIS and an MBA. When I'm not optimizing database queries down to sub-50ms latencies, I build automated local tooling and scalable enterprise solutions.
+                    </p>
+                    <a href="resume-freelance.pdf" target="_blank" class="btn-secondary" style="display: inline-block;">Download Resume (.PDF)</a>
+                </div>
+            </div>
+
+            <!-- Professional Testimonial Quotes Sub-Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <blockquote style="background: rgba(3, 7, 18, 0.6); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border-color); margin: 0; font-size: 0.875rem; color: #d1d5db; font-style: italic;">
+                    "Garrett diagnosed our core performance bottlenecks in record time and drastically improved our system throughput. A top-tier technical mind."
+                    <footer style="font-size: 0.75rem; color: var(--text-muted); font-style: normal; margin-top: 0.75rem;">— Senior Engineering Colleague</footer>
+                </blockquote>
+                <blockquote style="background: rgba(3, 7, 18, 0.6); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid var(--border-color); margin: 0; font-size: 0.875rem; color: #d1d5db; font-style: italic;">
+                    "Incredible grasp of both enterprise architecture and business drivers. Any team or client would benefit immensely from his technical leadership."
+                    <footer style="font-size: 0.75rem; color: var(--text-muted); font-style: normal; margin-top: 0.75rem;">— Past Engineering Manager & Reference</footer>
+                </blockquote>
+            </div>
+        </section>
+
     </main>
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Garrett Papit. All rights reserved. Built with precision architecture.</p>
         <p style="margin-top: 0.5rem;">
-            <a href="/services/" style="color: var(--accent-blue); text-decoration: none; font-size: 0.8rem;">Visit GarretTech Solutions (Local IT & Computer Repair) → </a>
+            <a href="/services/" style="color: var(--accent-blue); text-decoration: none; font-size: 0.8rem;">Visit GarretTech Solutions (Local IT & Computer Repair) →</a>
         </p>
     </footer>
 
