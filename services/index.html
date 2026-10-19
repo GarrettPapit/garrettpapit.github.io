@@ -59,6 +59,28 @@
             }
         }
 
+        @keyframes circuitFlow {
+            0% { stroke-dashoffset: 1000; stroke-opacity: 0.2; }
+            50% { stroke-opacity: 0.8; }
+            100% { stroke-dashoffset: 0; stroke-opacity: 0.2; }
+            }
+        
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.25;
+        }
+           
+        .circuit-line {
+            stroke-dasharray: 200, 20;
+            animation: circuitFlow 12s linear infinite;
+        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
