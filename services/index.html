@@ -34,11 +34,23 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.18;
+            opacity: 0.25;
+        }
+
+        @keyframes circuitFlow {
+            0% { stroke-dashoffset: 1000; stroke-opacity: 0.2; }
+            50% { stroke-opacity: 0.8; }
+            100% { stroke-dashoffset: 0; stroke-opacity: 0.2; }
+        }
+    
+           
+        .circuit-line {
+            stroke-dasharray: 200, 20;
+            animation: circuitFlow 12s linear infinite;
         }
 
         /* Glowing Circuit Node Pulse Animation */
@@ -53,32 +65,10 @@
                 filter: drop-shadow(0 0 2px var(--accent-cyan));
             }
             100% {
-                r: 6;
+                r: 6.5;
                 fill: var(--accent-blue);
-                filter: drop-shadow(0 0 8px var(--accent-blue));
+                filter: drop-shadow(0 0 10px var(--accent-blue));
             }
-        }
-
-        @keyframes circuitFlow {
-            0% { stroke-dashoffset: 1000; stroke-opacity: 0.2; }
-            50% { stroke-opacity: 0.8; }
-            100% { stroke-dashoffset: 0; stroke-opacity: 0.2; }
-            }
-        
-        .circuit-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.25;
-        }
-           
-        .circuit-line {
-            stroke-dasharray: 200, 20;
-            animation: circuitFlow 12s linear infinite;
         }
 
         .container {
