@@ -114,35 +114,44 @@
       </div>
     </header>
 
-    <header class="max-w-4xl mx-auto pt-16 pb-8 px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400">Transcribe_Ambient Showcase</h1>
-        <p class="text-xl text-gray-400 mt-2 font-light">Local Ambient Audio Intelligence Architecture</p>
-    </header>
-
     <main class="max-w-7xl mx-auto px-6 py-8">
       <!-- TAB 1: PROCESS OVERVIEW -->
       <div id="tab-overview" class="tab-content active space-y-8">
-        <div class="relative overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl group">
-          <div class="bg-slate-800/50 h-[300px] flex items-center justify-center text-slate-400 font-mono">Architecture Visualization Banner Asset</div>
+        
+        <!-- FIXED: Image placeholder swapped for explicit container logic -->
+        <div class="relative overflow-hidden rounded-2xl border border-cyan-500/30 shadow-2xl h-[300px] bg-slate-900/50 flex flex-col items-center justify-center p-6 text-center border-dashed">
+          <svg class="w-12 h-12 text-cyan-500/60 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+          </svg>
+          <h3 class="text-lg font-bold text-white tracking-tight">Audio Pipeline Flow Visualization</h3>
+          <p class="text-xs text-slate-400 mt-1 max-w-md">On-Premise DSP Architecture & Quantum INT8 Engine Flow Model</p>
         </div>
         
-        <!-- Pipeline Grid Layout Step Highlights -->
+        <!-- Pipeline Grid Interactive Selection Row -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div id="stage-1" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
-            <h3 class="font-bold text-white">Stage 01: Ingestion</h3>
-            <p class="text-xs text-slate-400 mt-1">Local folder monitoring diagnostics and file format metadata verification rules.</p>
-          </div>
-          <div id="stage-2" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+          <button onclick="selectStage(1)" id="stage-card-1" class="stage-card text-left glass-panel p-5 rounded-xl border-l-4 border-cyan-500 transition-all scale-[1.02] shadow-lg shadow-cyan-500/5">
+            <h3 class="font-bold text-cyan-400">Stage 01: Ingestion</h3>
+            <p class="text-xs text-slate-400 mt-1">Local automated folder telemetry monitoring and asset catalog verification.</p>
+          </button>
+          <button onclick="selectStage(2)" id="stage-card-2" class="stage-card text-left glass-panel p-5 rounded-xl border-l-4 border-slate-800 opacity-60 hover:opacity-100 transition-all">
             <h3 class="font-bold text-white">Stage 02: DSP</h3>
-            <p class="text-xs text-slate-400 mt-1">FFmpeg spectral unconditioning & high-sensitivity noise reduction filters.</p>
-          </div>
-          <div id="stage-3" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <p class="text-xs text-slate-400 mt-1">FFmpeg spectral subtraction filters and high-noise stem decoupling.</p>
+          </button>
+          <button onclick="selectStage(3)" id="stage-card-3" class="stage-card text-left glass-panel p-5 rounded-xl border-l-4 border-slate-800 opacity-60 hover:opacity-100 transition-all">
             <h3 class="font-bold text-white">Stage 03: Engine</h3>
-            <p class="text-xs text-slate-400 mt-1">INT8 quantized execution utilizing local faster-whisper compute acceleration metrics.</p>
-          </div>
-          <div id="stage-4" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <p class="text-xs text-slate-400 mt-1">Quantized faster-whisper INT8 beam search model conversions.</p>
+          </button>
+          <button onclick="selectStage(4)" id="stage-card-4" class="stage-card text-left glass-panel p-5 rounded-xl border-l-4 border-slate-800 opacity-60 hover:opacity-100 transition-all">
             <h3 class="font-bold text-white">Stage 04: Polish</h3>
-            <p class="text-xs text-slate-400 mt-1">Ollama local LLM post-processing for structured transcripts and synthesis.</p>
+            <p class="text-xs text-slate-400 mt-1">Ollama structural translation layer and JSON schema normalization.</p>
+          </button>
+        </div>
+
+        <!-- FIXED: Added explicit active stage telemetry readout panel container -->
+        <div class="glass-panel p-6 rounded-xl border border-cyan-500/20 bg-slate-900/40 font-mono text-xs text-cyan-300" id="stage-telemetry-panel">
+          <span class="text-slate-500 text-[10px] uppercase font-bold tracking-wider block mb-2">Stage Telemetry Readout Details</span>
+          <div id="stage-telemetry-content">
+            [STAGE 1 ACTIVE] Listening to folder metrics... verifying file sizes and audio sampling properties before spawning processing threads.
           </div>
         </div>
       </div>
@@ -155,8 +164,7 @@
           <div class="flex space-x-3">
             <button onclick="triggerSimulation()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors">Run Interactive Batch Simulation</button>
             <button onclick="resetSimulation()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-semibold transition-colors">Reset Terminal State</button>
-          </div>
-        </div>
+             </div>
         <div class="bg-black/40 font-mono text-xs p-4 rounded-xl border border-slate-900 h-48 overflow-y-auto terminal-scroll text-emerald-400" id="terminal-logs">
           [SYSTEM] Local Whisper infrastructure initialized. Ready for file ingestion logs...
         </div>
@@ -168,12 +176,24 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="glass-panel p-6 rounded-xl border border-cyan-500/20">
             <h3 class="text-cyan-400 font-bold mb-2">RAW HIGH-NOISE INPUT SPECTROGRAM</h3>
-            <div class="bg-slate-950/60 h-40 rounded-lg flex items-center justify-center border border-slate-800 text-xs text-slate-500">[Spectrogram Image Asset Missing Code Fix]</div>
+            <div class="bg-slate-950/60 h-40 rounded-lg flex flex-col items-center justify-center border border-slate-800 text-xs text-slate-500">
+              <svg class="w-8 h-8 text-red-500/40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.302-1.894 1.21-3L13.304 5.351c-.771-1.27-2.583-1.27-3.354 0L3.27 15.352c-1.092 1.106-.33 3 1.21 3z"/>
+              </svg>
+              <span>[ Spectrogram Signal Distorted ]</span>
+              <span class="text-[10px] text-slate-600 mt-1">Broadband noise floor: -12dB</span>
+            </div>
           </div>
           <div class="glass-panel p-6 rounded-xl border border-cyan-500/20">
             <h3 class="text-cyan-400 font-bold mb-2">POST-CLEANUP CONDITIONED WAVEFORM MATRIX</h3>
-            <div class="bg-slate-950/60 h-40 rounded-lg flex items-center justify-center border border-slate-800 text-xs text-slate-500">[DSP Spectrum Plot Output Asset]</div>
-                   </div>
+            <div class="bg-slate-950/60 h-40 rounded-lg flex flex-col items-center justify-center border border-slate-800 text-xs text-slate-500">
+              <svg class="w-8 h-8 text-emerald-500/40 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span class="text-emerald-400">[ Signal Conditioned via FFmpeg ]</span>
+              <span class="text-[10px] text-slate-600 mt-1">Residual floor isolated: -58dB</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -241,6 +261,30 @@
       const activeBtn = document.getElementById('tab-btn-' + tabId);
       activeBtn.classList.remove('text-slate-400');
       activeBtn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
+    }
+
+    const stageDetails = {
+      1: "[STAGE 01: INGESTION ACTIVE] Monitoring folder pools via Python watchdog runtimes. Checking file format encodings, verifying bitrates, and confirming timestamps match expected parameters before streaming blocks into the DSP layer.",
+      2: "[STAGE 02: DSP FILTERING ACTIVE] Executing parallel high-pass and low-pass filtering modules via FFmpeg. Subtracting dynamic noise floors down by up to 45dB to clean vocal stems and remove high-frequency environmental room tones.",
+      3: "[STAGE 03: TRANSCRIBE ENGINE ACTIVE] Compiling cleaned .wav file segments through optimized INT8 quantized Whisper layouts. Accelerating speech recognition tasks via multi-threaded beam searches without sending data to external networks.",
+      4: "[STAGE 04: LLM POLISH ACTIVE] Feeding extracted unstructured text transcripts directly into a localized Ollama instance. Normalizing punctuation layout parameters and structuring clear output into validated client JSON schemas."
+    };
+
+    function selectStage(stageId) {
+      document.querySelectorAll('.stage-card').forEach(el => {
+        el.classList.add('opacity-60', 'border-slate-800');
+        el.classList.remove('scale-[1.02]', 'shadow-lg', 'shadow-cyan-500/5', 'border-cyan-500');
+        el.querySelector('h3').classList.remove('text-cyan-400');
+        el.querySelector('h3').classList.add('text-white');
+      });
+
+      const activeCard = document.getElementById('stage-card-' + stageId);
+      activeCard.classList.remove('opacity-60', 'border-slate-800');
+      activeCard.classList.add('scale-[1.02]', 'shadow-lg', 'shadow-cyan-500/5', 'border-cyan-500');
+      activeCard.querySelector('h3').classList.remove('text-white');
+      activeCard.querySelector('h3').classList.add('text-cyan-400');
+
+      document.getElementById('stage-telemetry-content').innerText = stageDetails[stageId];
     }
 
     function triggerSimulation() {
