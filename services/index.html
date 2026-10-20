@@ -450,6 +450,37 @@
         </div>
     </section>
 
+    <!-- Map Canvas Initialization Script (FIXED: Stabilized global coordinate mapping references) -->
+    <script>
+        (function() {
+            // Explicitly target your lab office map container
+            const mapElement = document.getElementById('office-map');
+            if (!mapElement) return;
+
+            // Pinned office coordinate geometry matching your exact Forest Lane location
+            const dallasOffice = [32.9096, -96.7594]; 
+
+            // Initialize mapping instance bypassing premature DOM listener blocks
+            const map = L.map(mapElement, {
+                center: dallasOffice,
+                zoom: 14,
+                zoomControl: true,
+                attributionControl: false
+            });
+
+            // Pull dark matter interface graphics over secure baseline tile grids
+            L.tileLayer('https://{s}://{z}/{x}/{y}{r}.png', {
+                maxZoom: 20,
+                subdomains: 'abcd'
+            }).addTo(map);
+
+            // Drop glowing interactive marker coordinate pad directly onto workspace layout layer
+            const marker = L.marker(dallasOffice).addTo(map);
+            marker.bindPopup("<b style='color: #030712; font-family: sans-serif;'>GarretTech Solutions</b><br><span style='color: #374151; font-family: sans-serif;'>Suite 904 - Data Recovery Lab</span>").openPopup();
+        })();
+    </script>
+
+
     <footer>
         <p>&copy; 2026 GarretTech Solutions. All rights reserved.</p>
     </footer>
