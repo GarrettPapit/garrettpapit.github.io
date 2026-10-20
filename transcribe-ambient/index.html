@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Transcribe_Ambient | Enterprise AI Pipeline Portfolio Showcase</title>
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <!-- Official Tailwind Play CDN for layout utility parsing -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Animated Glowing Circuit Traces */
     @keyframes circuitFlow {
@@ -52,23 +53,22 @@
       background: rgba(255, 255, 255, 0.15);
       border-radius: 3px;
     }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
   </style>
 </head>
 <body class="bg-[#0B0F19] text-[#E2E8F0] antialiased min-h-screen font-sans selection:bg-cyan-500 selection:text-white relative overflow-x-hidden">
 
   <!-- DYNAMIC ANIMATED CIRCUIT SVG BACKGROUND -->
-  <svg class="circuit-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <svg class="circuit-bg" xmlns="http://w3.org" viewBox="0 0 1440 900" fill="none">
     <g stroke="#06b6d4" stroke-width="1.5" class="circuit-line">
-      <!-- Left Margin Traces -->
       <path d="M0 150 H120 L180 210 V400 L220 440 H350" />
       <path d="M0 320 H80 L140 380 V550 L180 590 H300" />
       <path d="M0 650 H150 L210 590 H400 L450 640 H600" />
-      <!-- Right Margin Traces -->
       <path d="M1440 200 H1320 L1260 260 V500 L1220 540 H1050" />
       <path d="M1440 480 H1280 L1220 540 H950" />
       <path d="M1440 700 H1350 L1290 640 H1100" />
     </g>
-    <!-- Glowing Node Terminals (Vias) -->
     <g fill="#22d3ee">
       <circle cx="180" cy="210" r="3.5" class="pulse-glow" />
       <circle cx="220" cy="440" r="3" />
@@ -80,9 +80,7 @@
     </g>
   </svg>
 
-  <!-- CONTENT WRAPPER -->
   <div class="relative z-10">
-
     <!-- TOP HERO NAVIGATION -->
     <header class="border-b border-slate-800/80 bg-[#0B0F19]/90 sticky top-0 z-50 backdrop-blur-md">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
@@ -101,26 +99,14 @@
           </div>
         </div>
 
-        <!-- Navigation Tabs -->
         <nav class="flex items-center space-x-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800">
-          <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-            Process Overview
-          </button>
-          <button onclick="switchTab('gui')" id="tab-btn-gui" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">
-            Interactive App Mockup
-          </button>
-          <button onclick="switchTab('audio-lab')" id="tab-btn-audio-lab" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">
-            DSP & Transcript Diff
-          </button>
-          <button onclick="switchTab('business')" id="tab-btn-business" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">
-            Business ROI & Privacy
-          </button>
-          <button onclick="switchTab('video-script')" id="tab-btn-video-script" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">
-            Video Demo Storyboard
-          </button>
+          <button onclick="switchTab('overview')" id="tab-btn-overview" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Process Overview</button>
+          <button onclick="switchTab('gui')" id="tab-btn-gui" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">Interactive App Mockup</button>
+          <button onclick="switchTab('audio-lab')" id="tab-btn-audio-lab" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">DSP & Transcript Diff</button>
+          <button onclick="switchTab('business')" id="tab-btn-business" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">Business ROI & Privacy</button>
+          <button onclick="switchTab('video-script')" id="tab-btn-video-script" class="tab-btn px-4 py-2 text-xs font-medium rounded-lg transition-all text-slate-400 hover:text-white">Video Demo Storyboard</button>
         </nav>
 
-        <!-- Portfolio Author Tag -->
         <div class="hidden md:flex items-center space-x-2 text-xs text-slate-400">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           <span>Engineer: <strong class="text-slate-200">Garrett Papit</strong></span>
@@ -128,219 +114,149 @@
       </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
+    <header class="max-w-4xl mx-auto pt-16 pb-8 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400">Transcribe_Ambient Showcase</h1>
+        <p class="text-xl text-gray-400 mt-2 font-light">Local Ambient Audio Intelligence Architecture</p>
+    </header>
+
     <main class="max-w-7xl mx-auto px-6 py-8">
-
-      <!-- TAB 1: PROCESS OVERVIEW & SYSTEM ARCHITECTURE -->
-      <div id="tab-overview" class="tab-content space-y-8">
-        
-        <!-- HERO BANNER IMAGE -->
+      <!-- TAB 1: PROCESS OVERVIEW -->
+      <div id="tab-overview" class="tab-content active space-y-8">
         <div class="relative overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl group">
-          <img src="hero_portfolio_banner.jpg" alt="Local AI Ambient Audio Transcription Pipeline Architecture" class="w-full h-auto object-cover max-h-[400px] transition-transform duration-700 group-hover:scale-[1.01]">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-xs text-slate-300">
-            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 font-mono">Architecture Visualization • On-Premise DSP & Local Edge AI</span>
-            <span class="bg-cyan-500/20 text-cyan-300 backdrop-blur-md px-3 py-1 rounded-full border border-cyan-500/30 font-semibold">16:9 Portfolio Hero Asset</span>
-          </div>
-        </div>
-
-        <!-- HERO VALUE BANNER -->
-        <div class="relative overflow-hidden rounded-2xl glass-panel p-8 border border-cyan-500/20 shadow-2xl">
-          <div class="max-w-3xl space-y-4">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 text-cyan-400 border border-cyan-800/60 text-xs font-medium">
-              <span>Portfolio Showcase Highlight</span>
-            </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Transforming Unconditioned Ambient Audio into <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Auditable Business Intelligence</span> — 100% On-Premise.
-            </h1>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples <strong>FFmpeg DSP spectral conditioning</strong>, <strong>INT8 Quantized Faster-Whisper</strong>, and <strong>Ollama Local LLM Polish</strong> to achieve zero-cloud, zero-cost, enterprise-grade transcription.
-            </p>
-
-            <!-- Stat Cards -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-              <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-                <div class="text-2xl font-bold text-cyan-400">$0.00</div>
-                <div class="text-xs text-slate-400 font-medium mt-1">Marginal API Costs</div>
-              </div>
-              <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-                <div class="text-2xl font-bold text-indigo-400">100%</div>
-                <div class="text-xs text-slate-400 font-medium mt-1">Data Sovereignty (Air-Gapped)</div>
-              </div>
-              <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-                <div class="text-2xl font-bold text-emerald-400">~60%</div>
-                <div class="text-xs text-slate-400 font-medium mt-1">Whisper Latency Cut via DSP</div>
-              </div>
-              <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-                <div class="text-2xl font-bold text-amber-400">0</div>
-                <div class="text-xs text-slate-400 font-medium mt-1">Cloud Egress Points / Leaks</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PIPELINE STAGES -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div onclick="selectStage(1)" id="stage-card-1" class="stage-card cursor-pointer glass-panel p-5 rounded-xl border border-cyan-500/40 bg-cyan-950/20">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300">Stage 01</span>
-            <h3 class="font-bold text-white text-base mt-2">Ingestion & Diagnostics</h3>
-            <p class="text-xs text-slate-400 mt-2">`ffprobe` extracts sample rates, codecs, and durations while classifying source tags.</p>
-          </div>
-          <div onclick="selectStage(2)" id="stage-card-2" class="stage-card cursor-pointer glass-panel p-5 rounded-xl border border-slate-800">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300">Stage 02</span>
-            <h3 class="font-bold text-white text-base mt-2">DSP Conditioning</h3>
-            <p class="text-xs text-slate-400 mt-2">FFmpeg `afftdn` noise suppression (-30dB floor) & dual silence removal.</p>
-          </div>
-          <div onclick="selectStage(3)" id="stage-card-3" class="stage-card cursor-pointer glass-panel p-5 rounded-xl border border-slate-800">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300">Stage 03</span>
-            <h3 class="font-bold text-white text-base mt-2">Faster-Whisper INT8</h3>
-            <p class="text-xs text-slate-400 mt-2">CTranslate2 INT8 small model parallel execution with VAD filter.</p>
-          </div>
-          <div onclick="selectStage(4)" id="stage-card-4" class="stage-card cursor-pointer glass-panel p-5 rounded-xl border border-slate-800">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300">Stage 04</span>
-            <h3 class="font-bold text-white text-base mt-2">Ollama LLM Polish</h3>
-            <p class="text-xs text-slate-400 mt-2">On-premise `llama3` formats text, removes stutters, and appends audit headers.</p>
-          </div>
-        </div>
-
-        <!-- STAGE DEEP-DIVE INSPECTOR -->
-        <div id="stage-inspector" class="glass-panel p-6 rounded-2xl border border-cyan-500/30">
-          <div class="flex items-center space-x-3 mb-4 border-b border-slate-800 pb-3">
-            <span id="inspector-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300">Stage 01 Details</span>
-            <h4 id="inspector-title" class="font-bold text-white text-base">Source Ingestion & Dynamic Routing</h4>
-          </div>
-          <p id="inspector-desc" class="text-sm text-slate-300 leading-relaxed mb-4">
-            The pipeline monitors target directories for media (`.wav`, `.mp3`, `.m4a`, `.aac`, `.amr`). It executes `ffprobe` to inspect audio channels and sample rates while parsing regex timestamp patterns.
-          </p>
-          <div class="bg-black/60 rounded-xl p-4 border border-slate-800 font-mono text-xs text-cyan-300 overflow-x-auto">
-            <pre id="inspector-code"><code>def determine_source(filename, metadata):
-    # Dynamically matches source types and applies high-sensitivity flags
-    return "[EarSpy_Ambient]", True</code></pre>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- TAB 2: INTERACTIVE APP MOCKUP -->
-      <div id="tab-gui" class="tab-content hidden space-y-6">
-        <div class="flex items-center justify-between">
-          <h2 class="text-2xl font-bold text-white">Interactive Application Simulator</h2>
-          <button onclick="startInteractiveSimulation()" id="sim-run-btn" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-lg">
-            Run Interactive Batch Simulation
-          </button>
+          <div class="bg-slate-800/50 h-[300px] flex items-center justify-center text-slate-400 font-mono">Architecture Visualization Banner Asset</div>
         </div>
         
-        <div class="rounded-2xl border border-slate-700 bg-[#161B26] p-6 space-y-4">
-          <div class="flex justify-between items-center bg-slate-900 p-3 rounded-lg border border-slate-800 text-xs font-mono">
-            <span>Target Directory: C:\EnterpriseAudio\Staging_Recordings</span>
-            <span id="mock-status-text" class="text-emerald-400 font-bold">Status: Ready</span>
+        <!-- Pipeline Grid Layout Step Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div id="stage-1" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <h3 class="font-bold text-white">Stage 01: Ingestion</h3>
+            <p class="text-xs text-slate-400 mt-1">Local folder monitoring diagnostics and file format metadata verification rules.</p>
           </div>
-
-          <div class="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden border border-slate-800">
-            <div id="sim-progress-bar" class="bg-gradient-to-r from-cyan-400 to-indigo-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+          <div id="stage-2" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <h3 class="font-bold text-white">Stage 02: DSP</h3>
+            <p class="text-xs text-slate-400 mt-1">FFmpeg spectral unconditioning & high-sensitivity noise reduction filters.</p>
           </div>
-
-          <div id="mock-terminal" class="bg-[#0D1117] border border-slate-800 rounded-xl p-4 font-mono text-xs text-slate-300 h-64 overflow-y-auto terminal-scroll space-y-1">
-            <div class="text-slate-500">[INIT] Application initialized. Waiting for batch trigger...</div>
-            <div class="text-slate-500">[+] FFmpeg binary verified in system PATH.</div>
-            <div class="text-slate-500">[+] Ollama daemon active at 127.0.0.1:11434 (Model: llama3).</div>
+          <div id="stage-3" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <h3 class="font-bold text-white">Stage 03: Engine</h3>
+            <p class="text-xs text-slate-400 mt-1">INT8 quantized execution utilizing local faster-whisper compute acceleration metrics.</p>
+          </div>
+          <div id="stage-4" class="glass-panel p-5 rounded-xl border-l-4 border-cyan-500">
+            <h3 class="font-bold text-white">Stage 04: Polish</h3>
+            <p class="text-xs text-slate-400 mt-1">Ollama local LLM post-processing for structured transcripts and synthesis.</p>
           </div>
         </div>
       </div>
 
-      <!-- TAB 3: DSP & TRANSCRIPT DIFF LAB -->
-      <div id="tab-audio-lab" class="tab-content hidden space-y-6">
-        <h2 class="text-2xl font-bold text-white">Audio Conditioning & Transcript Diff</h2>
+      <!-- TAB 2: INTERACTIVE MOCKUP -->
+      <div id="tab-gui" class="tab-content space-y-6">
+        <h2 class="text-2xl font-bold text-white">Interactive Pipeline Automation Simulator</h2>
+        <div class="glass-panel p-6 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+          <span class="text-sm font-mono text-slate-400">Target Workspace: local_audio_ingress_pool/</span>
+          <div class="flex space-x-3">
+            <button onclick="triggerSimulation()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-colors">Run Interactive Batch Simulation</button>
+            <button onclick="resetSimulation()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-xs font-semibold transition-colors">Reset Terminal State</button>
+          </div>
+        </div>
+        <div class="bg-black/40 font-mono text-xs p-4 rounded-xl border border-slate-900 h-48 overflow-y-auto terminal-scroll text-emerald-400" id="terminal-logs">
+          [SYSTEM] Local Whisper infrastructure initialized. Ready for file ingestion logs...
+        </div>
+      </div>
+
+      <!-- TAB 3: DSP & TRANSCRIPT DIFF -->
+      <div id="tab-audio-lab" class="tab-content space-y-6">
+        <h2 class="text-2xl font-bold text-white">DSP Audio Cleanup & Transcription Quality Analysis</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-panel p-5 rounded-xl border border-red-500/20 bg-red-950/10">
-            <h3 class="text-red-400 font-bold text-sm mb-2">RAW RECORDING (Low SNR)</h3>
-            <p class="text-xs text-slate-300">Raw audio contains HVAC hum (-24dB) and 72s of silent dead air causing Whisper beam hallucination loops.</p>
+          <div class="glass-panel p-6 rounded-xl border border-cyan-500/20">
+            <h3 class="text-cyan-400 font-bold mb-2">RAW HIGH-NOISE INPUT SPECTROGRAM</h3>
+            <div class="bg-slate-950/60 h-40 rounded-lg flex items-center justify-center border border-slate-800 text-xs text-slate-500">[Spectrogram Image Asset Missing Code Fix]</div>
           </div>
-          <div class="glass-panel p-5 rounded-xl border border-emerald-500/20 bg-emerald-950/10">
-            <h3 class="text-emerald-400 font-bold text-sm mb-2">DSP CONDITIONED STEM (-66% Time)</h3>
-            <p class="text-xs text-slate-300">FFmpeg `afftdn` suppresses ambient floor; dead room silence is stripped below -30dB for instant processing.</p>
-          </div>
+          <div class="glass-panel p-6 rounded-xl border border-cyan-500/20">
+            <h3 class="text-cyan-400 font-bold mb-2">POST-CLEANUP CONDITIONED WAVEFORM MATRIX</h3>
+            <div class="bg-slate-950/60 h-40 rounded-lg flex items-center justify-center border border-slate-800 text-xs text-slate-500">[DSP Spectrum Plot Output Asset]</div>
+                   </div>
         </div>
       </div>
 
       <!-- TAB 4: BUSINESS ROI & PRIVACY -->
-      <div id="tab-business" class="tab-content hidden space-y-6">
-        <h2 class="text-2xl font-bold text-white">Business ROI & Data Sovereignty</h2>
-        <div class="glass-panel p-6 rounded-2xl border border-cyan-500/30">
-          <h3 class="text-cyan-400 font-bold text-lg mb-2">Annual Cost Avoidance</h3>
-          <div class="text-4xl font-extrabold text-white mb-2">$43,200 / Year</div>
-          <p class="text-xs text-slate-300">Direct cloud API cost avoidance (AWS Transcribe @ $0.024/min) for 250 processing hours monthly.</p>
+      <div id="tab-business" class="tab-content space-y-6">
+        <h2 class="text-2xl font-bold text-white">Business TCO Optimization & Cloud Cost Avoidance</h2>
+        <div class="glass-panel p-6 rounded-xl border border-slate-800 max-w-md space-y-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase text-slate-400 mb-2">Select Pipeline Processing Load</label>
+            <select id="roi-hours" onchange="calculateROI()" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-sm text-white focus:outline-none focus:border-cyan-500">
+              <option value="100">100 Processing Hours / Month</option>
+              <option value="250" selected>250 Processing Hours / Month</option>
+              <option value="500">500 Processing Hours / Month</option>
+              <option value="1000">1000 Processing Hours / Month</option>
+            </select>
+          </div>
+          <div class="bg-cyan-950/40 border border-cyan-800/40 rounded-xl p-5 text-center">
+            <span class="text-xs text-cyan-400 uppercase tracking-wider font-semibold">Annual Infrastructure Savings</span>
+            <div class="text-3xl font-bold text-white mt-1" id="roi-display">$43,200 / Year</div>
+            <p class="text-[10px] text-slate-500 mt-2">Savings vs standard commercial cloud solutions tracking a flat $0.024/minute runtime</p>
+          </div>
         </div>
       </div>
 
-      <!-- TAB 5: VIDEO STORYBOARD -->
-      <div id="tab-video-script" class="tab-content hidden space-y-6">
-        <h2 class="text-2xl font-bold text-white">Portfolio Video Demo Storyboard</h2>
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-2">
-          <span class="text-xs font-bold text-cyan-400">00:00 - 00:30 (Acoustic Conditioning)</span>
-          <p class="text-xs text-slate-300">Show terminal executing `afftdn` spectral noise reduction and dual-threshold silence stripping.</p>
+      <!-- TAB 5: VIDEO DEMO STORYBOARD -->
+      <div id="tab-video-script" class="tab-content space-y-6">
+        <h2 class="text-2xl font-bold text-white">Architecture Video Walkthrough Storyboard</h2>
+        <div class="space-y-4 max-w-3xl">
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex gap-4">
+            <span class="text-cyan-400 font-mono text-sm font-bold shrink-0">00:00 - 00:30</span>
+            <div>
+              <h4 class="text-sm font-semibold text-slate-200">The Ambient Audio Data Isolation Dilemma</h4>
+              <p class="text-xs text-slate-400 mt-1">Highlighting challenges of multi-channel Ingestion loops and setting up clear local boundaries for voice profiling metrics.</p>
+            </div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex gap-4">
+            <span class="text-cyan-400 font-mono text-sm font-bold shrink-0">00:30 - 01:15</span>
+            <div>
+              <h4 class="text-sm font-semibold text-slate-200">FFmpeg Spectral Subtraction Runtimes</h4>
+              <p class="text-xs text-slate-400 mt-1">Live configuration analysis demonstrating structural removal of server room air conditioner drone and line distortions.</p>
+            </div>
+          </div>
+          <div class="glass-panel p-4 rounded-xl border border-slate-800 flex gap-4">
+            <span class="text-cyan-400 font-mono text-sm font-bold shrink-0">01:15 - 02:00</span>
+            <div>
+              <h4 class="text-sm font-semibold text-slate-200">Localized Whisper Inference Realities</h4>
+              <p class="text-xs text-slate-400 mt-1">Reviewing execution parameters on standard customer hardware configurations utilizing advanced INT8 mathematical beam-search formatting.</p>
+            </div>
+          </div>
         </div>
       </div>
-
     </main>
-
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- CONTROL SCRIPTS FOR APP MUTATIONS AND MATH LOOPS -->
   <script>
     function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
-        btn.classList.add('text-slate-400');
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
+        el.classList.add('text-slate-400');
       });
 
-      const targetContent = document.getElementById('tab-' + tabId);
-      const targetBtn = document.getElementById('tab-btn-' + tabId);
-
-      if (targetContent) targetContent.classList.remove('hidden');
-      if (targetBtn) {
-        targetBtn.classList.remove('text-slate-400');
-        targetBtn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
-      }
+      document.getElementById('tab-' + tabId).classList.add('active');
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      activeBtn.classList.remove('text-slate-400');
+      activeBtn.classList.add('bg-cyan-500/20', 'text-cyan-300', 'border', 'border-cyan-500/30');
     }
 
-    function selectStage(num) {
-      const stages = {
-        1: { badge: "Stage 01 Details", title: "Ingestion & Diagnostics", desc: "Batch scans folders. `ffprobe` extracts sample rates, codecs, and durations.", code: "def determine_source(fn, meta):\n    return '[EarSpy_Ambient]', True" },
-        2: { badge: "Stage 02 Details", title: "DSP Conditioning", desc: "FFmpeg multi-stage filter: afftdn FFT noise suppression (-30dB floor) & silence stripping.", code: "filter_chain = 'afftdn=nr=12:nf=-30,silenceremove=...' " },
-        3: { badge: "Stage 03 Details", title: "Quantized Faster-Whisper", desc: "CTranslate2 INT8 quantized small model executes parallel beam search across CPU threads.", code: "model = WhisperModel('small', compute_type='int8')" },
-        4: { badge: "Stage 04 Details", title: "Ollama LLM Polish", desc: "Locally served `llama3` formats transcript and appends ISO metadata audit headers.", code: "client.generate(model='llama3', prompt=prompt)" }
-      };
-
-      const s = stages[num];
-      document.getElementById('inspector-badge').innerText = s.badge;
-      document.getElementById('inspector-title').innerText = s.title;
-      document.getElementById('inspector-desc').innerText = s.desc;
-      document.getElementById('inspector-code').querySelector('code').innerText = s.code;
+    function triggerSimulation() {
+      const logs = document.getElementById('terminal-logs');
+      logs.innerHTML += "<br/>[+] Ingesting new raw ambient stream asset...<br/>[DSP] Running noise suppression filters... OK.<br/>[ENGINE] Running faster-whisper INT8 structural parsing... 100% complete.";
+      logs.scrollTop = logs.scrollHeight;
     }
 
-    function startInteractiveSimulation() {
-      const progressBar = document.getElementById('sim-progress-bar');
-      const statusText = document.getElementById('mock-status-text');
-      const terminal = document.getElementById('mock-terminal');
+    function resetSimulation() {
+      document.getElementById('terminal-logs').innerHTML = "[SYSTEM] Local Whisper infrastructure initialized. Ready for file ingestion logs...";
+    }
 
-      statusText.innerHTML = 'Processing...';
-      let pct = 0;
-      const interval = setInterval(() => {
-        pct += 25;
-        progressBar.style.width = pct + '%';
-        
-        const line = document.createElement('div');
-        line.className = 'text-cyan-300';
-        line.innerText = `[LOG] Pipeline active... ${pct}% complete.`;
-        terminal.appendChild(line);
-
-        if (pct >= 100) {
-          clearInterval(interval);
-          statusText.innerHTML = 'Ready (Batch Complete)';
-        }
-      }, 500);
+    function calculateROI() {
+      const hours = document.getElementById('roi-hours').value;
+      const savings = hours * 60 * 0.024 * 12;
+      document.getElementById('roi-display').innerHTML = "$" + savings.toLocaleString() + " / Year";
     }
   </script>
 </body>
