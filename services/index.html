@@ -29,30 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Circuit Background Overlay */
-        .circuit-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.25;
-        }
-
-        @keyframes circuitFlow {
-            0% { stroke-dashoffset: 1000; stroke-opacity: 0.2; }
-            50% { stroke-opacity: 0.8; }
-            100% { stroke-dashoffset: 0; stroke-opacity: 0.2; }
-        }
-    
-           
-        .circuit-line {
-            stroke-dasharray: 200, 20;
-            animation: circuitFlow 12s linear infinite;
-        }
-
         /* Glowing Circuit Node Pulse Animation */
         .node-pulse {
             animation: pulse-glow 3s infinite alternate ease-in-out;
@@ -108,18 +84,40 @@
             position: relative;
             z-index: 10;
         }
+       /* Ambient Circuit Background Overlay (FIXED: Connected the global stroke keyframe loop directly) */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35; /* Bumped up slightly from 0.25 so the lines are visibly crisper */
+        }
 
-        /* Constrains your primary brand identity logo */
+        @keyframes circuitFlow {
+            0% { stroke-dashoffset: 1000; stroke-opacity: 0.3; }
+            50% { stroke-opacity: 0.9; }
+            100% { stroke-dashoffset: 0; stroke-opacity: 0.3; }
+        }
+    
+        /* Bound the moving strokes directly to the SVG background layout engine */
+        .circuit-bg path, .circuit-line {
+            stroke-dasharray: 200, 20;
+            animation: circuitFlow 14s linear infinite !important;
+        }
+
+        /* Constrains your primary brand identity logo (FIXED: Stripped away the drop-shadow filter glow) */
         .logo-banner {
             max-width: 320px;
             width: 100%;
             height: auto;
             margin: 0 auto 1rem auto;
             display: block;
-            filter: drop-shadow(0 6px 12px rgba(56, 189, 248, 0.15));
         }
 
-        /* Constrains and centers your boardroom architectural layout image asset */
+        /* Constrains and centers your boardroom architectural layout image asset (FIXED: Omitted glowing filters) */
         .architect-photo {
             max-width: 440px;
             width: 100%;
@@ -128,7 +126,6 @@
             display: block;
             border-radius: 0.75rem;
             border: 1px solid var(--border-color);
-            filter: drop-shadow(0 8px 16px rgba(3, 7, 18, 0.6));
         }
 
         .hero h1 {
