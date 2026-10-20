@@ -322,22 +322,32 @@
         <a href="../index.html">View Principal Portfolio →</a>
     </div>
 
-    <!-- Hero Header -->
-    <section class="hero">
-        <div class="container">
-            <img src="../assets/GarretTech Solutions Banner.jpg" alt="GarretTech Solutions Logo" class="logo-banner">
-            <br>    
-            <img src="../assets/Garrett Papit - Principal Architect.jpg" alt="Garrett Papit - Principal Architect" class="logo-banner">
+ <!-- Hero Header -->
+    <section class="hero relative z-10">
+        <div class="container max-w-4xl mx-auto text-center px-4">
             
-            <h1>Reliable IT Services, Computer Repair & Tech Solutions</h1>
-            <p>Fast, professional technical support for homes, local businesses, and remote professionals. From data recovery to network security.</p>
+            <!-- CLEAN IMAGE STRUCTURE CONTAINERS (GLOW SUPPRESSED) -->
+            <div class="flex flex-col items-center space-y-6 mb-8">
+                <!-- 1. GarretTech Solutions Banner Container -->
+                <div class="w-full max-w-md bg-slate-900/40 p-3 rounded-xl border border-slate-800/80 shadow-md">
+                    <img src="../assets/GarretTech Solutions Banner.jpg" alt="GarretTech Solutions Logo" class="w-full h-auto rounded-lg block object-contain">
+                </div>
+                
+                <!-- 2. Principal Architect Portrait Container -->
+                <div class="w-full max-w-lg bg-slate-900/40 p-3 rounded-xl border border-slate-800/80 shadow-md">
+                    <img src="../assets/Garrett Papit - Principal Architect.jpg" alt="Garrett Papit - Principal Architect" class="w-full h-auto rounded-lg block object-cover aspect-[16/9]">
+                </div>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">Reliable IT Services, Computer Repair & Tech Solutions</h1>
+            <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto mb-8 leading-relaxed">Fast, professional technical support for homes, local businesses, and remote professionals. From data recovery to network security.</p>
 
-            <!-- External Business Links -->
-            <div class="platform-bar">
-                <a href="https://share.google/3Gu3vuVIZNDe0myls" target="_blank" class="platform-btn">⭐ Google Reviews</a>
-                <a href="https://www.yelp.com/biz/garrettech-solutions-dallas-2" target="_blank" class="platform-btn">🔴 Yelp Page</a>
-                <a href="https://nextdoor.com/page/garpa-it-solutions-dallas-tx" target="_blank" class="platform-btn">🟢 NextDoor Favorite</a>
-                <a href="https://www.facebook.com/profile.php?id=61589530513649" target="_blank" class="platform-btn">🔵 Facebook Business</a>
+            <!-- External Business Links Bar -->
+            <div class="platform-bar flex flex-wrap justify-center gap-3">
+                <a href="https://share.google" target="_blank" class="platform-btn bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-800/80 px-4 py-2 rounded-lg text-xs font-semibold transition-all">⭐ Google Reviews</a>
+                <a href="https://yelp.com" target="_blank" class="platform-btn bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-800/80 px-4 py-2 rounded-lg text-xs font-semibold transition-all">🔴 Yelp Page</a>
+                <a href="https://nextdoor.com" target="_blank" class="platform-btn bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-800/80 px-4 py-2 rounded-lg text-xs font-semibold transition-all">🟢 NextDoor Favorite</a>
+                <a href="https://facebook.com" target="_blank" class="platform-btn bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-800/80 px-4 py-2 rounded-lg text-xs font-semibold transition-all">🔵 Facebook Business</a>
             </div>
         </div>
     </section>
