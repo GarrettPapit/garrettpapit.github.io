@@ -109,12 +109,26 @@
             z-index: 10;
         }
 
+        /* Constrains your primary brand identity logo */
         .logo-banner {
-            max-width: 450px;
+            max-width: 320px;
             width: 100%;
             height: auto;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 10px 20px rgba(56, 189, 248, 0.2));
+            margin: 0 auto 1rem auto;
+            display: block;
+            filter: drop-shadow(0 6px 12px rgba(56, 189, 248, 0.15));
+        }
+
+        /* Constrains and centers your boardroom architectural layout image asset */
+        .architect-photo {
+            max-width: 440px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            filter: drop-shadow(0 8px 16px rgba(3, 7, 18, 0.6));
         }
 
         .hero h1 {
@@ -330,12 +344,12 @@
             <div class="flex flex-col items-center space-y-6 mb-8">
                 <!-- 1. GarretTech Solutions Banner Container -->
                 <div class="w-full max-w-md bg-slate-900/40 p-3 rounded-xl border border-slate-800/80 shadow-md">
-                    <img src="../assets/GarretTech Solutions Banner.jpg" alt="GarretTech Solutions Logo" class="w-full max-w-[400px] h-auto mx-auto rounded-lg block object-contain">
+                    <img src="../assets/GarretTech Solutions Banner.jpg" alt="GarretTech Solutions Logo" class="logo-banner">
                 </div>
                 
                 <!-- 2. Principal Architect Portrait Container -->
                 <div class="w-full max-w-lg bg-slate-900/40 p-3 rounded-xl border border-slate-800/80 shadow-md">
-                    <img src="../assets/Garrett Papit - Principal Architect.jpg" alt="Garrett Papit - Principal Architect" class="w-full max-w-[550px] h-auto mx-auto rounded-lg block object-cover aspect-[16/9]">
+                    <img src="../assets/Garrett Papit - Principal Architect.jpg" alt="Garrett Papit - Principal Architect" class="architect-photo">
                 </div>
             </div>
             
