@@ -7,8 +7,8 @@
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.9; }
+      0%, 100__ { opacity: 0.4; }
+      50__ { opacity: 0.9; }
     }
     .pulse-glow { animation: pulseGlow 2.5s infinite; }
     .glass-panel {
@@ -27,39 +27,73 @@
       background: rgba(255, 255, 255, 0.15);
       border-radius: 3px;
     }
-    /* High-Tech Circuit Visualization Pipelines */
+    
+    /* ============================================================== */
+    /* LOCAL CARD CORE CIRCUIT ANIMATIONS                             */
+    /* ============================================================== */
     @keyframes circuitPulse {
-        0% {
+        0__ {
             stroke-dashoffset: 100;
             opacity: 0.2;
             filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
         }
-        50% {
+        50__ {
             opacity: 1;
             filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8));
         }
-        100% {
+        100__ {
             stroke-dashoffset: -100;
             opacity: 0.2;
             filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
         }
     }
+    .animate-circuit-trace {
+        stroke-dasharray: 20 10;
+        animation: circuitPulse 6s linear infinite;
+    }
+    @keyframes nodeGlow {
+        0__, 100__ { transform: scale(1); filter: brightness(1); }
+        50__ { transform: scale(1.15); filter: brightness(1.4); }
+    }
+    .animate-node-glow {
+        transform-origin: center;
+        animation: nodeGlow 3s ease-in-out infinite;
+    }
 
-  .animate-circuit-trace {
-      stroke-dasharray: 20 10;
-      animation: circuitPulse 6s linear infinite;
-  }
-
-  /* Slow structural rotation loop for hardware nodes */
-  @keyframes nodeGlow {
-      0%, 100% { transform: scale(1); filter: brightness(1); }
-      50% { transform: scale(1.15); filter: brightness(1.4); }
-  }
-
-  .animate-node-glow {
-      transform-origin: center;
-      animation: nodeGlow 3s ease-in-out infinite;
-  }
+    /* ============================================================== */
+    /* GLOBAL 5-TAB BACKGROUND CIRCUIT ANIMATIONS                     */
+    /* ============================================================== */
+    @keyframes circuitPulseTrace {
+        0__ {
+            stroke-dashoffset: 120;
+            opacity: 0.15;
+        }
+        50__ {
+            opacity: 0.85;
+        }
+        100__ {
+            stroke-dashoffset: -120;
+            opacity: 0.15;
+        }
+    }
+    .animate-circuit-bg-trace {
+        stroke-dasharray: 30 15;
+        animation: circuitPulseTrace 8s linear infinite;
+    }
+    @keyframes structuralNodeGlow {
+        0__, 100__ { 
+            transform: scale(1); 
+            opacity: 0.3; 
+        }
+        50__ { 
+            transform: scale(1.25); 
+            opacity: 0.9; 
+        }
+    }
+    .animate-circuit-bg-node {
+        transform-origin: center;
+        animation: structuralNodeGlow 4s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-[#0B0F19] text-[#E2E8F0] antialiased min-h-screen font-sans selection:bg-cyan-500 selection:text-white">
