@@ -183,7 +183,7 @@
     <!-- ============================================================== -->
     <!-- TAB 1: PROCESS OVERVIEW & SYSTEM ARCHITECTURE -->
     <!-- ============================================================== -->
-    <div id="tab-overview" class="tab-content space-y-8">
+    <div id="tab-overview" class="tab-content space-y-12 max-w-4xl mx-auto flex flex-col items-center">
       <!-- HERO BANNER IMAGE -->
       <div class="relative overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl group">
         <img src="hero_portfolio_banner.jpg" alt="Local AI Ambient Audio Transcription Pipeline Architecture" class="w-full h-auto object-cover max-h-[400px] transition-transform duration-700 group-hover:scale-[1.01]">
@@ -225,31 +225,31 @@
       </p> -->
 		  
 		  <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples **FFmpeg DSP spectral conditioning**, **INT8 Quantized Faster-Whisper**, and **Ollama Local LLM Polish** to achieve zero-cloud, zero-cost, enterprise-grade transcription.
+        Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples <strong>FFmpeg DSP spectral conditioning</strong>, <strong>INT8 Quantized Faster-Whisper</strong>, and <strong>Ollama Local LLM Polish</strong> to achieve zero-cloud, zero-cost, enterprise-grade transcription.
       </p>
         
       <!-- Core Stat Cards -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
-        <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-          <div class="text-2xl font-bold text-cyan-400">$0.00</div>
-          <div class="text-xs text-slate-400 font-medium mt-1">Marginal API Costs</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-3xl relative z-10">
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-cyan-400 font-mono">$0.00</div>
+          <div class="text-xs text-slate-400 mt-1">Marginal API Costs</div>
         </div>
-        <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-          <div class="text-2xl font-bold text-indigo-400">100%</div>
-          <div class="text-xs text-slate-400 font-medium mt-1">Data Sovereignty (Air-Gapped)</div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-indigo-400 font-mono">100%</div>
+          <div class="text-xs text-slate-400 mt-1">Data Sovereignty (Air-Gapped)</div>
         </div>
-        <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-          <div class="text-2xl font-bold text-emerald-400">~60%</div>
-          <div class="text-xs text-slate-400 font-medium mt-1">Whisper Latency Cut via DSP</div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-emerald-400 font-mono">~60%</div>
+          <div class="text-xs text-slate-400 mt-1">Whisper Latency Cut via DSP</div>
         </div>
-        <div class="glass-card p-4 rounded-xl border border-slate-700/50">
-          <div class="text-2xl font-bold text-amber-400">0</div>
-          <div class="text-xs text-slate-400 font-medium mt-1">Cloud Egress Points / Leaks</div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-amber-500 font-mono">0</div>
+          <div class="text-xs text-slate-400 mt-1">Cloud Egress Points / Leaks</div>
         </div>
       </div>
     </div>
   </div>
-  
+
       <!-- INTERACTIVE PIPELINE FLOWCHART -->
       <div class="space-y-4">
         <div class="flex items-center justify-between">
