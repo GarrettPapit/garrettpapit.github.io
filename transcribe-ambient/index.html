@@ -7,8 +7,8 @@
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     @keyframes pulseGlow {
-      0%, 100__ { opacity: 0.4; }
-      50__ { opacity: 0.9; }
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
     }
     .pulse-glow { animation: pulseGlow 2.5s infinite; }
     .glass-panel {
@@ -32,16 +32,16 @@
     /* LOCAL CARD CORE CIRCUIT ANIMATIONS                             */
     /* ============================================================== */
     @keyframes circuitPulse {
-        0__ {
+        0% {
             stroke-dashoffset: 100;
             opacity: 0.2;
             filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
         }
-        50__ {
+        50% {
             opacity: 1;
             filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8));
         }
-        100__ {
+        100% {
             stroke-dashoffset: -100;
             opacity: 0.2;
             filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
@@ -52,8 +52,8 @@
         animation: circuitPulse 6s linear infinite;
     }
     @keyframes nodeGlow {
-        0__, 100__ { transform: scale(1); filter: brightness(1); }
-        50__ { transform: scale(1.15); filter: brightness(1.4); }
+        0%, 100% { transform: scale(1); filter: brightness(1); }
+        50% { transform: scale(1.15); filter: brightness(1.4); }
     }
     .animate-node-glow {
         transform-origin: center;
@@ -64,14 +64,14 @@
     /* GLOBAL 5-TAB BACKGROUND CIRCUIT ANIMATIONS                     */
     /* ============================================================== */
     @keyframes circuitPulseTrace {
-        0__ {
+        0% {
             stroke-dashoffset: 120;
             opacity: 0.15;
         }
-        50__ {
+        50% {
             opacity: 0.85;
         }
-        100__ {
+        100% {
             stroke-dashoffset: -120;
             opacity: 0.15;
         }
@@ -81,11 +81,11 @@
         animation: circuitPulseTrace 8s linear infinite;
     }
     @keyframes structuralNodeGlow {
-        0__, 100__ { 
+        0%, 100% { 
             transform: scale(1); 
             opacity: 0.3; 
         }
-        50__ { 
+        50% { 
             transform: scale(1.25); 
             opacity: 0.9; 
         }
