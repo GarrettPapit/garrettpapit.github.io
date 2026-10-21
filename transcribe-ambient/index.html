@@ -27,6 +27,39 @@
       background: rgba(255, 255, 255, 0.15);
       border-radius: 3px;
     }
+    /* High-Tech Circuit Visualization Pipelines */
+    @keyframes circuitPulse {
+        0% {
+            stroke-dashoffset: 100;
+            opacity: 0.2;
+            filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
+        }
+        50% {
+            opacity: 1;
+            filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8));
+        }
+        100% {
+            stroke-dashoffset: -100;
+            opacity: 0.2;
+            filter: drop-shadow(0 0 2px rgba(96, 165, 250, 0.3));
+        }
+    }
+
+  .animate-circuit-trace {
+      stroke-dasharray: 20 10;
+      animation: circuitPulse 6s linear infinite;
+  }
+
+  /* Slow structural rotation loop for hardware nodes */
+  @keyframes nodeGlow {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.15); filter: brightness(1.4); }
+  }
+
+  .animate-node-glow {
+      transform-origin: center;
+      animation: nodeGlow 3s ease-in-out infinite;
+  }
   </style>
 </head>
 <body class="bg-[#0B0F19] text-[#E2E8F0] antialiased min-h-screen font-sans selection:bg-cyan-500 selection:text-white">
@@ -630,140 +663,66 @@
     <!-- TAB 5: VIDEO DEMO STORYBOARD & RECORDING GUIDE -->
     <!-- ============================================================== -->
     <div id="tab-video-script" class="tab-content hidden space-y-8">
-      
-      <div class="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-bold text-white tracking-tight">Portfolio Video Demo Storyboard (60–90 Seconds)</h2>
-          <p class="text-xs text-slate-400">Ready-to-record scene plan and voiceover narrative for LinkedIn, GitHub README, and personal portfolio showcases.</p>
-        </div>
-        <div class="px-3 py-1.5 rounded-lg bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-mono">
-          Recommended Format: 1080p 60fps (Loom / OBS Studio)
-        </div>
+      <!-- Video Storyboard Tab Panel Content Pane -->
+      <div id="tab-video-storyboard" class="tab-content hidden">
+          <div class="relative w-full overflow-hidden bg-slate-900 rounded-xl border border-slate-800 p-6 md:p-8 group shadow-2xl">
+              
+              <!-- Interactive Circuit Art Layer Background Matrix -->
+              <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20 transition-opacity duration-500 group-hover:opacity-40" 
+                  xmlns="http://w3.org" viewBox="0 0 800 450" preserveAspectRatio="none">
+                  <defs>
+                      <linearGradient id="circuitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+                          <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.3" />
+                          <stop offset="100%" stop-color="#10b981" stop-opacity="0.0" />
+                      </linearGradient>
+                  </defs>
+                  <!-- Circuit Path Vectors -->
+                  <path d="M 30,50 L 200,50 L 280,130 L 550,130 L 600,80 L 750,80" fill="none" stroke="url(#circuitGlow)" stroke-width="2" class="animate-circuit-trace" />
+                  <path d="M 100,400 L 300,400 L 380,320 L 650,320" fill="none" stroke="url(#circuitGlow)" stroke-width="1.5" class="animate-circuit-trace" style="animation-delay: -3s; animation-duration: 4s;" />
+                  <!-- Connection Node Coordinates -->
+                  <circle cx="200" cy="50" r="4" fill="#22d3ee" class="animate-node-glow" />
+                  <circle cx="280" cy="130" r="5" fill="#34d399" class="animate-node-glow" style="animation-delay: -1.5s;" />
+                  <circle cx="550" cy="130" r="4" fill="#3b82f6" class="animate-node-glow" style="animation-delay: -0.8s;" />
+              </svg>
+
+              <!-- Main Card Workspace Framework -->
+              <div class="relative z-10 flex flex-col xl:flex-row gap-6 items-center">
+                  
+                  <!-- Column A: Responsive Aspect-Ratio Video Core -->
+                  <div class="w-full xl:w-3/5 aspect-video bg-slate-950 rounded-lg overflow-hidden border border-slate-800 shadow-inner group-hover:border-cyan-500/50 transition-colors duration-300">
+                      <video class="w-full h-full object-cover" controls preload="metadata" poster="assets/images/storyboard-poster.jpg">
+                          <source src="assets/videos/transcribe-ambient-demo.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+
+                  <!-- Column B: Technical Description Frame Info -->
+                  <div class="w-full xl:w-2/5 flex flex-col justify-between">
+                      <div>
+                          <span class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase bg-cyan-950/50 border border-cyan-800/40 px-2 py-1 rounded mb-3 inline-block">Architecture Showcase</span>
+                          <h3 class="text-2xl font-bold text-slate-100 mb-3 tracking-tight">Transcribe_Ambient Pipeline Walkthrough</h3>
+                          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                              A detailed live-execution trace of the local automation pipeline processing high-noise audio. Witness the multi-stage DSP acoustic filtering, silero-VAD threshold trimming, and structural Llama 3 normalization in real-time execution loops.
+                          </p>
+                      </div>
+
+                      <!-- Technical Parameter Telemetry Highlights -->
+                      <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-800/80 text-xs font-mono">
+                          <div class="p-2 bg-slate-950/40 rounded border border-slate-800/50">
+                              <span class="block text-slate-500">Pipeline State:</span>
+                              <span class="font-bold text-emerald-400">100% On-Prem</span>
+                          </div>
+                          <div class="p-2 bg-slate-950/40 rounded border border-slate-800/50">
+                              <span class="block text-slate-500">Video Duration:</span>
+                              <span class="font-bold text-slate-300">01:15 Mins</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-
-      <!-- STORYBOARD SCENE TILES -->
-      <div class="space-y-4">
-        
-        <!-- Scene 1 -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-500/20 text-cyan-300">00:00 - 00:15</span>
-              <h4 class="font-bold text-white text-sm">Scene 1: The Ambient Noise & Cloud Privacy Dilemma</h4>
-            </div>
-            <span class="text-xs text-slate-500 font-mono">Screen: Split view of messy audio waveform & Cloud API price chart</span>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div class="bg-black/40 p-3 rounded-lg border border-slate-800/80">
-              <div class="font-semibold text-slate-400 mb-1">Visual On-Screen Action:</div>
-              <p class="text-slate-300">
-                Show a raw audio file with loud background hum and long silent pauses. Flash a brief graphic showing OpenAI/AWS API costs and the risk of sending private conversations to cloud servers.
-              </p>
-            </div>
-            <div class="bg-cyan-950/20 p-3 rounded-lg border border-cyan-800/40">
-              <div class="font-semibold text-cyan-300 mb-1">Voiceover / Narrative:</div>
-              <p class="text-slate-200 italic">
-                "Standard AI speech models often fail on real-world room recordings due to background noise and silence hallucination loops. On top of that, cloud APIs expose sensitive conversations and incur steep per-minute fees."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 2 -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300">00:15 - 00:35</span>
-              <h4 class="font-bold text-white text-sm">Scene 2: Multi-Stage DSP Acoustic Conditioning</h4>
-            </div>
-            <span class="text-xs text-slate-500 font-mono">Screen: Terminal / GUI running FFmpeg afftdn + silenceremove</span>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div class="bg-black/40 p-3 rounded-lg border border-slate-800/80">
-              <div class="font-semibold text-slate-400 mb-1">Visual On-Screen Action:</div>
-              <p class="text-slate-300">
-                Zoom in on the terminal executing `afftdn=nr=12:nf=-30` and `silenceremove`. Show the audio duration drop from 3 minutes to 1 minute as dead silence is surgically pruned.
-              </p>
-            </div>
-            <div class="bg-indigo-950/20 p-3 rounded-lg border border-indigo-800/40">
-              <div class="font-semibold text-indigo-300 mb-1">Voiceover / Narrative:</div>
-              <p class="text-slate-200 italic">
-                "I engineered a zero-cloud pipeline that begins with dynamic digital signal processing. Using FFmpeg, we apply adaptive FFT noise profiling and dual-threshold silence stripping, cutting audio duration by 60% and eliminating the root cause of AI hallucinations."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 3 -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300">00:35 - 00:55</span>
-              <h4 class="font-bold text-white text-sm">Scene 3: Quantized Faster-Whisper & Desktop GUI Batch</h4>
-            </div>
-            <span class="text-xs text-slate-500 font-mono">Screen: Desktop GUI (gui_transcribe.py) running batch</span>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div class="bg-black/40 p-3 rounded-lg border border-slate-800/80">
-              <div class="font-semibold text-slate-400 mb-1">Visual On-Screen Action:</div>
-              <p class="text-slate-300">
-                Click "Start Batch Processing" in `gui_transcribe.py`. Show the real-time logs streaming in the dark-mode terminal window with INT8 CTranslate2 execution.
-              </p>
-            </div>
-            <div class="bg-blue-950/20 p-3 rounded-lg border border-blue-800/40">
-              <div class="font-semibold text-blue-300 mb-1">Voiceover / Narrative:</div>
-              <p class="text-slate-200 italic">
-                "For transcription, the pipeline leverages Faster-Whisper with INT8 quantization across parallel CPU worker threads, delivering lightning-fast inference without needing expensive cloud GPUs."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scene 4 -->
-        <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300">00:55 - 01:15</span>
-              <h4 class="font-bold text-white text-sm">Scene 4: Local Ollama LLM Polish & Final Deliverable</h4>
-            </div>
-            <span class="text-xs text-slate-500 font-mono">Screen: Side-by-side Markdown output inspection in VS Code</span>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div class="bg-black/40 p-3 rounded-lg border border-slate-800/80">
-              <div class="font-semibold text-slate-400 mb-1">Visual On-Screen Action:</div>
-              <p class="text-slate-300">
-                Open the generated `.txt` / `.md` file. Highlight the automatically generated ISO metadata header, clean paragraph structuring, and action items produced by local Llama 3 via Ollama.
-              </p>
-            </div>
-            <div class="bg-purple-950/20 p-3 rounded-lg border border-purple-800/40">
-              <div class="font-semibold text-purple-300 mb-1">Voiceover / Narrative:</div>
-              <p class="text-slate-200 italic">
-                "Finally, an on-premise Llama 3 instance polishes the transcript into structured business intelligence—removing verbal stutters and adding metadata headers. The result: 100% data privacy, zero recurring cloud costs, and audit-ready transcripts."
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Quick Recording Tips -->
-      <div class="glass-panel p-5 rounded-xl border border-slate-800 space-y-2">
-        <h4 class="font-bold text-white text-sm">Pro Tips for Recording Your Demo Video</h4>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300 pt-1">
-          <div class="glass-card p-3 rounded-lg">
-            <strong class="text-cyan-400">1. Clean Desktop:</strong> Hide desktop icons and close unrelated browser tabs so the viewer focuses strictly on the app and terminal.
-          </div>
-          <div class="glass-card p-3 rounded-lg">
-            <strong class="text-cyan-400">2. Cursor Smoothing:</strong> Use Loom or OBS Studio with cursor highlight to guide viewer attention directly to buttons and logs.
-          </div>
-          <div class="glass-card p-3 rounded-lg">
-            <strong class="text-cyan-400">3. Fast-Paced:</strong> Keep the entire video under 75 seconds for maximum LinkedIn & GitHub viewer retention.
-          </div>
-        </div>
-      </div>
-
     </div>
-
   </main>
 
   <!-- JAVASCRIPT LOGIC -->
