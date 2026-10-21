@@ -183,10 +183,9 @@
     <!-- ============================================================== -->
     <!-- TAB 1: PROCESS OVERVIEW & SYSTEM ARCHITECTURE -->
     <!-- ============================================================== -->
-    <div id="tab-overview" class="tab-content space-y-12 w-full flex flex-col items-center">
-      
-      <!-- HERO BANNER IMAGE (FIXED: Reverted to full wide layout configuration framework) -->
-      <div class="relative overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl group w-full max-w-5xl mx-auto">
+    <div id="tab-overview" class="tab-content space-y-12 max-w-4xl mx-auto flex flex-col items-center">
+      <!-- HERO BANNER IMAGE -->
+      <div class="relative overflow-hidden rounded-2xl border border-slate-700/80 shadow-2xl group">
         <img src="hero_portfolio_banner.jpg" alt="Local AI Ambient Audio Transcription Pipeline Architecture" class="w-full h-auto object-cover max-h-[400px] transition-transform duration-700 group-hover:scale-[1.01]">
         <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-60"></div>
         <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-xs text-slate-300">
@@ -195,8 +194,8 @@
         </div>
       </div>
 
-      <!-- HERO VALUE BANNER (FIXED: Implemented isolated narrow container constraint here to open background space) -->
-      <div class="relative overflow-hidden rounded-2xl glass-panel p-8 border border-cyan-500/20 shadow-2xl w-full max-w-4xl mx-auto flex flex-col items-center">
+      <!-- HERO VALUE BANNER -->
+      <div class="relative overflow-hidden rounded-2xl glass-panel p-8 border border-cyan-500/20 shadow-2xl">
         <div class="absolute -right-20 -top-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -206,50 +205,50 @@
           <span>Portfolio Showcase Highlight</span>
         </div> -->
 		  
-        <div class="text-center space-y-4 pt-4 pb-4 relative z-10 w-full max-w-3xl">
-          <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full text-sm font-medium text-blue-400 mx-auto">
-            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-            <span>Portfolio Showcase Highlight</span>
-          </div>
-        </div>		  
+      <div class="text-center space-y-4 pt-10 pb-4 relative z-10 w-full max-w-3xl">
+        <div class="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full text-sm font-medium text-blue-400 mx-auto">
+          <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+          <span>Portfolio Showcase Highlight</span>
+        </div>
+      </div>		  
 
 <!--  <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
           Transforming Unconditioned Ambient Audio into <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Auditable Business Intelligence</span> — 100% On-Premise.
       </h1> -->
 		  
-		    <h1 class="text-center text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl">
-          Transforming Unconditioned Ambient Audio into <span class="text-cyan-400">Auditable Business Intelligence</span> — 100% On-Premise.
-        </h1>
+		  <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        Transforming Unconditioned Ambient Audio into <span class="text-cyan-400">Auditable Business Intelligence</span> — 100% On-Premise.
+      </h1>
 		  
 <!--  <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
         Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples <strong>FFmpeg DSP spectral conditioning</strong>, <strong>INT8 Quantized Faster-Whisper</strong>, and <strong>Ollama Local LLM Polish</strong> to achieve zero-cloud, zero-cost, enterprise-grade transcription.
       </p> -->
 		  
-		    <p class="text-center text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed mt-4">
-          Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples <strong>FFmpeg DSP spectral conditioning</strong>, <strong>INT8 Quantized Faster-Whisper</strong>, and <strong>Ollama Local LLM Polish</strong> to achieve zero-cloud, zero-cost, enterprise-grade transcription.
-        </p>
+		  <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Standard cloud speech APIs choke on room reverberation, air-conditioner hum, and cross-talk, while sending sensitive corporate conversations over third-party servers. This production pipeline couples <strong>FFmpeg DSP spectral conditioning</strong>, <strong>INT8 Quantized Faster-Whisper</strong>, and <strong>Ollama Local LLM Polish</strong> to achieve zero-cloud, zero-cost, enterprise-grade transcription.
+      </p>
         
-        <!-- Core Stat Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-3xl relative z-10 mt-8">
-          <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
-            <div class="text-2xl font-bold text-cyan-400 font-mono">$0.00</div>
-            <div class="text-xs text-slate-400 mt-1">Marginal API Costs</div>
-          </div>
-          <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
-            <div class="text-2xl font-bold text-indigo-400 font-mono">100%</div>
-            <div class="text-xs text-slate-400 mt-1">Data Sovereignty (Air-Gapped)</div>
-          </div>
-          <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
-            <div class="text-2xl font-bold text-emerald-400 font-mono">~60%</div>
-            <div class="text-xs text-slate-400 mt-1">Whisper Latency Cut via DSP</div>
-          </div>
-          <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
-            <div class="text-2xl font-bold text-amber-500 font-mono">0</div>
-            <div class="text-xs text-slate-400 mt-1">Cloud Egress Points / Leaks</div>
-          </div>
+      <!-- Core Stat Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-3xl relative z-10">
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-cyan-400 font-mono">$0.00</div>
+          <div class="text-xs text-slate-400 mt-1">Marginal API Costs</div>
+        </div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-indigo-400 font-mono">100%</div>
+          <div class="text-xs text-slate-400 mt-1">Data Sovereignty (Air-Gapped)</div>
+        </div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-emerald-400 font-mono">~60%</div>
+          <div class="text-xs text-slate-400 mt-1">Whisper Latency Cut via DSP</div>
+        </div>
+        <div class="p-5 bg-slate-900/50 rounded-xl border border-slate-800/80 backdrop-blur-sm text-center">
+          <div class="text-2xl font-bold text-amber-500 font-mono">0</div>
+          <div class="text-xs text-slate-400 mt-1">Cloud Egress Points / Leaks</div>
         </div>
       </div>
     </div>
+  </div>
 
       <!-- INTERACTIVE PIPELINE FLOWCHART -->
       <div class="space-y-4">
