@@ -169,6 +169,12 @@
             padding: 1rem;
             border-radius: 0.75rem;
             border: 1px solid var(--border-color);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .point-box:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25), 0 8px 24px rgba(56, 189, 248, 0.08);
         }
 
         .point-box h3 {
@@ -321,19 +327,19 @@
             </div>
 
             <div class="grid-points">
-                <div class="project-card">
+                <div class="point-box">
                     <h3>🚀 Backend Architecture</h3>
                     <p>.NET 8 Microservices, CQRS with MediatR, and strict SOLID principles.</p>
                 </div>
-                <div class="project-card">
+                <div class="point-box">
                     <h3>⚡ Database Optimization</h3>
                     <p>SQL Server paired with Dapper Micro-ORM for sub-50ms paginated query delivery.</p>
                 </div>
-                <div class="project-card">
+                <div class="point-box">
                     <h3>📡 Real-Time UI</h3>
                     <p>React & Angular components hooked directly into a live SignalR WebSocket pipeline.</p>
                 </div>
-                <div class="project-card">
+                <div class="point-box">
                     <h3>🐋 DevOps Ready</h3>
                     <p>Fully containerized development ecosystem using multi-stage Docker Compose scripting.</p>
                 </div>
